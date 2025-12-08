@@ -13,30 +13,39 @@
         }
 
         :root {
-            /* Emerald Green Theme */
-            --emerald-primary: #059669;
-            --emerald-dark: #047857;
-            --emerald-darker: #065f46;
-            --emerald-light: #10b981;
-            --emerald-lighter: #34d399;
-            --emerald-bg: #064e3b;
-            --emerald-gradient: linear-gradient(135deg, #047857 0%, #059669 50%, #10b981 100%);
+            /* Care Nova Brand Colors */
+            --blue-primary: #1e5a8e;
+            --blue-light: #2b7bb9;
+            --blue-lighter: #4a9fd8;
+            --blue-dark: #164870;
+            --teal: #0e9e96;
+            --teal-light: #1fc9be;
+            --green-leaf: #7ec845;
+            --green-bright: #a5d96a;
             
-            /* Gold Theme */
-            --gold-primary: #d4af37;
-            --gold-light: #f4d03f;
-            --gold-dark: #b8941e;
-            --gold-metallic: #ffd700;
-            --gold-pale: #f9e79f;
+            /* Premium Gold */
+            --gold-light: #FFD700;
+            --gold-primary: #FDB931;
+            --gold-medium: #F4A460;
+            --gold-dark: #DAA520;
+            --gold-darker: #B8860B;
+            --gold-metallic: #D4AF37;
             
-            /* Supporting Colors */
+            /* Gradients */
+            --gradient-gold-premium: linear-gradient(135deg, #FFD700 0%, #FDB931 25%, #F4A460 50%, #DAA520 75%, #B8860B 100%);
+            --gradient-gold-shine: linear-gradient(135deg, #FFE55C 0%, #FFD700 20%, #FDB931 40%, #F4A460 60%, #DAA520 80%, #C9A227 100%);
+            --gradient-blue: linear-gradient(135deg, #1e5a8e 0%, #2b7bb9 50%, #4a9fd8 100%);
+            --gradient-teal: linear-gradient(135deg, #0e9e96 0%, #1fc9be 100%);
+            --gradient-bg: linear-gradient(135deg, #164870 0%, #1e5a8e 50%, #2b7bb9 100%);
+            
+            /* Text Colors */
             --dark-text: #1a202c;
-            --light-text: #e8f5e9;
+            --light-text: #f0f9ff;
             --white: #ffffff;
-            --border-color: #10b981;
-            --background: #052e20;
-            --surface: #064e3b;
+            
+            /* Surfaces */
             --card-bg: rgba(255, 255, 255, 0.98);
+            --overlay-dark: rgba(22, 72, 112, 0.85);
         }
 
         body {
@@ -44,7 +53,7 @@
             color: var(--white);
             line-height: 1.6;
             overflow-x: hidden;
-            background: var(--emerald-bg);
+            background: var(--gradient-bg);
         }
 
         [dir="rtl"] {
@@ -59,21 +68,22 @@
 
         /* Header Styles */
         .header {
-            background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
-            border-bottom: 2px solid var(--gold-primary);
+            background: linear-gradient(135deg, #164870 0%, #1e5a8e 50%, #2b7bb9 100%);
+            border-bottom: 3px solid transparent;
+            border-image: var(--gradient-gold-shine) 1;
             padding: 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 24px;
+            padding: 12px 24px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -84,18 +94,21 @@
             gap: 16px;
         }
 
-        .logo-placeholder {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--emerald-dark);
-            box-shadow: 0 4px 8px rgba(212, 175, 55, 0.4);
+        /* Care Nova Logo SVG */
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+            filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.3));
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.3));
+            }
+            to {
+                filter: drop-shadow(0 4px 12px rgba(255, 215, 0, 0.5));
+            }
         }
 
         .logo-text {
@@ -105,16 +118,21 @@
         }
 
         .logo-text h1 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            color: var(--gold-primary);
+            color: var(--white);
             font-family: 'Google Sans', sans-serif;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
-        .logo-text span {
-            font-size: 12px;
-            color: var(--gold-pale);
+        .logo-text .healthcare {
+            font-size: 13px;
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
 
         .header-right {
@@ -141,7 +159,8 @@
         }
 
         .nav-links a:hover {
-            color: var(--gold-primary);
+            color: var(--gold-light);
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
         }
 
         .nav-links a::after {
@@ -151,7 +170,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold-primary);
+            background: var(--gradient-gold-shine);
             transition: width 0.3s;
         }
 
@@ -163,10 +182,10 @@
             display: flex;
             gap: 8px;
             align-items: center;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 215, 0, 0.1);
             padding: 4px;
             border-radius: 24px;
-            border: 1px solid var(--gold-dark);
+            border: 2px solid var(--gold-dark);
         }
 
         .lang-btn {
@@ -182,14 +201,14 @@
         }
 
         .lang-btn:hover {
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--gold-primary);
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--gold-light);
         }
 
         .lang-btn.active {
-            background: var(--gold-primary);
-            color: var(--emerald-dark);
-            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
+            background: var(--gradient-gold-shine);
+            color: var(--blue-dark);
+            box-shadow: 0 2px 10px rgba(255, 215, 0, 0.5);
         }
 
         .btn {
@@ -205,33 +224,34 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-            color: var(--emerald-dark);
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+            background: var(--gradient-gold-shine);
+            color: var(--blue-dark);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.4);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--gold-primary);
+            color: var(--gold-light);
             border: 2px solid var(--gold-primary);
         }
 
         .btn-outline:hover {
-            background: var(--gold-primary);
-            color: var(--emerald-dark);
+            background: var(--gradient-gold-shine);
+            color: var(--blue-dark);
             transform: translateY(-2px);
+            border-color: transparent;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #059669 100%);
+            background: linear-gradient(135deg, #164870 0%, #1e5a8e 30%, #2b7bb9 60%, #4a9fd8 100%);
             padding: 140px 0 80px;
-            margin-top: 70px;
+            margin-top: 76px;
             position: relative;
             overflow: hidden;
         }
@@ -243,8 +263,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
-            opacity: 0.3;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(126, 200, 69, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(14, 158, 150, 0.08) 0%, transparent 60%),
+                url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,215,0,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
+            opacity: 0.6;
         }
 
         .hero-content {
@@ -259,11 +283,14 @@
         .hero-text h2 {
             font-size: 56px;
             font-weight: 700;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 24px;
             font-family: 'Google Sans', sans-serif;
             line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3));
         }
 
         .hero-text p {
@@ -271,6 +298,7 @@
             color: var(--light-text);
             margin-bottom: 32px;
             line-height: 1.8;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero-buttons {
@@ -284,13 +312,30 @@
             background: var(--card-bg);
             padding: 32px;
             border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            border: 3px solid var(--gold-primary);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), 0 0 60px rgba(255, 215, 0, 0.15);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .booking-form::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: var(--gradient-gold-shine);
+            border-radius: 20px;
+            z-index: -1;
         }
 
         .booking-form h3 {
             font-size: 28px;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 24px;
             font-family: 'Google Sans', sans-serif;
             text-align: center;
@@ -304,7 +349,7 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: var(--emerald-dark);
+            color: var(--blue-primary);
             font-weight: 500;
         }
 
@@ -313,7 +358,7 @@
         .form-group textarea {
             width: 100%;
             padding: 12px 16px;
-            border: 2px solid var(--emerald-light);
+            border: 2px solid var(--blue-lighter);
             border-radius: 12px;
             font-size: 14px;
             transition: all 0.3s;
@@ -327,7 +372,7 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--gold-primary);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2), 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         .form-group textarea {
@@ -338,7 +383,22 @@
         /* Stats Section */
         .stats {
             padding: 60px 0;
-            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            background: linear-gradient(135deg, #0e9e96 0%, #1fc9be 50%, #7ec845 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
+            opacity: 0.7;
         }
 
         .stats-grid {
@@ -346,54 +406,99 @@
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 40px;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .stat-item {
             padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.15);
             border-radius: 16px;
-            border: 2px solid rgba(212, 175, 55, 0.3);
+            border: 2px solid transparent;
+            background-clip: padding-box;
             transition: all 0.3s;
+            position: relative;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-gold-shine);
+            border-radius: 16px;
+            z-index: -1;
+            opacity: 0.5;
+            transition: opacity 0.3s;
         }
 
         .stat-item:hover {
             transform: translateY(-5px);
-            border-color: var(--gold-primary);
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-item:hover::before {
+            opacity: 1;
         }
 
         .stat-number {
             font-size: 48px;
             font-weight: 700;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-family: 'Google Sans', sans-serif;
             margin-bottom: 8px;
+            filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
         }
 
         .stat-label {
             font-size: 16px;
-            color: var(--light-text);
+            color: var(--white);
             font-weight: 500;
         }
 
         /* Services Section */
         .services {
             padding: 80px 0;
-            background: linear-gradient(180deg, #064e3b 0%, #047857 100%);
+            background: linear-gradient(180deg, #1e5a8e 0%, #2b7bb9 50%, #4a9fd8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(126, 200, 69, 0.08) 0%, transparent 40%);
+            opacity: 0.5;
         }
 
         .section-header {
             text-align: center;
             margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .section-title {
             font-size: 48px;
             font-weight: 700;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 16px;
             font-family: 'Google Sans', sans-serif;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3));
         }
 
         .section-subtitle {
@@ -408,6 +513,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 32px;
+            position: relative;
+            z-index: 1;
         }
 
         .service-card {
@@ -417,32 +524,54 @@
             text-align: center;
             transition: all 0.3s;
             border: 3px solid transparent;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            background-clip: padding-box;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: var(--gradient-gold-shine);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .service-card:hover {
             transform: translateY(-8px);
-            border-color: var(--gold-primary);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
         }
 
         .service-icon {
             font-size: 64px;
             margin-bottom: 20px;
             display: inline-block;
-            filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.3));
+            filter: drop-shadow(0 4px 8px rgba(30, 90, 142, 0.3));
         }
 
         .service-card h3 {
             font-size: 24px;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 16px;
             font-family: 'Google Sans', sans-serif;
             font-weight: 700;
         }
 
         .service-card p {
-            color: var(--emerald-dark);
+            color: var(--blue-primary);
             line-height: 1.7;
             margin-bottom: 20px;
         }
@@ -450,7 +579,22 @@
         /* How It Works */
         .how-it-works {
             padding: 80px 0;
-            background: linear-gradient(180deg, #047857 0%, #059669 100%);
+            background: linear-gradient(180deg, #2b7bb9 0%, #0e9e96 50%, #1fc9be 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 40% 30%, rgba(255, 215, 0, 0.12) 0%, transparent 50%),
+                radial-gradient(circle at 60% 70%, rgba(126, 200, 69, 0.1) 0%, transparent 50%);
+            opacity: 0.6;
         }
 
         .steps-container {
@@ -458,6 +602,8 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             margin-top: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .step {
@@ -471,8 +617,8 @@
         .step-number {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
-            color: var(--emerald-dark);
+            background: var(--gradient-gold-shine);
+            color: var(--blue-dark);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -480,12 +626,15 @@
             font-size: 32px;
             font-weight: 700;
             margin: 0 auto 24px;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+            box-shadow: 0 6px 25px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
         }
 
         .step h3 {
             font-size: 22px;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 12px;
             font-family: 'Google Sans', sans-serif;
             font-weight: 700;
@@ -499,7 +648,22 @@
         /* Why Choose Us */
         .why-choose {
             padding: 80px 0;
-            background: linear-gradient(180deg, #059669 0%, #10b981 100%);
+            background: linear-gradient(180deg, #1fc9be 0%, #7ec845 50%, #a5d96a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255, 215, 0, 0.15) 0%, transparent 45%),
+                radial-gradient(circle at 75% 75%, rgba(30, 90, 142, 0.1) 0%, transparent 45%);
+            opacity: 0.5;
         }
 
         .features-grid {
@@ -507,48 +671,86 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 32px;
             margin-top: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .feature {
             background: var(--card-bg);
             padding: 32px;
             border-radius: 20px;
-            border-left: 5px solid var(--gold-primary);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid transparent;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.3s;
             opacity: 0;
             transform: translateY(30px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 5px;
+            background: var(--gradient-gold-shine);
+            transition: width 0.3s;
         }
 
         .feature:hover {
             transform: translateX(8px);
-            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
+        }
+
+        .feature:hover::before {
+            width: 100%;
+            opacity: 0.1;
         }
 
         .feature-icon {
             font-size: 48px;
             margin-bottom: 16px;
             display: inline-block;
-            filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+            filter: drop-shadow(0 2px 4px rgba(30, 90, 142, 0.3));
         }
 
         .feature h3 {
             font-size: 20px;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 12px;
             font-family: 'Google Sans', sans-serif;
             font-weight: 700;
         }
 
         .feature p {
-            color: var(--emerald-dark);
+            color: var(--blue-primary);
             line-height: 1.7;
         }
 
         /* Testimonials Section */
         .testimonials {
             padding: 80px 0;
-            background: linear-gradient(180deg, #10b981 0%, #047857 100%);
+            background: linear-gradient(180deg, #4a9fd8 0%, #2b7bb9 50%, #1e5a8e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 35% 40%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 65% 60%, rgba(126, 200, 69, 0.08) 0%, transparent 50%);
+            opacity: 0.6;
         }
 
         .testimonial-grid {
@@ -556,26 +758,39 @@
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
             margin-top: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .testimonial {
             background: var(--card-bg);
             padding: 36px;
             border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            border-top: 4px solid var(--gold-primary);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-top: 4px solid transparent;
             transition: all 0.3s;
             opacity: 0;
             transform: translateY(30px);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-gold-shine);
         }
 
         .testimonial:hover {
             transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+            box-shadow: 0 12px 35px rgba(255, 215, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.2);
         }
 
         .testimonial-text {
-            color: var(--emerald-dark);
+            color: var(--blue-primary);
             line-height: 1.8;
             font-style: italic;
             margin-bottom: 24px;
@@ -591,44 +806,69 @@
         .author-avatar {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--emerald-light) 0%, var(--emerald-primary) 100%);
+            background: var(--gradient-gold-shine);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             font-weight: 700;
-            color: white;
-            border: 3px solid var(--gold-primary);
+            color: var(--blue-dark);
+            border: 3px solid var(--gold-light);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
         }
 
         .author-info h4 {
             font-size: 18px;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 4px;
             font-weight: 700;
         }
 
         .author-info p {
             font-size: 14px;
-            color: var(--emerald-dark);
+            color: var(--blue-primary);
         }
 
         .rating {
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 20px;
             margin-top: 16px;
+            filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
         }
 
         /* FAQ Section */
         .faq {
             padding: 80px 0;
-            background: linear-gradient(180deg, #047857 0%, #064e3b 100%);
+            background: linear-gradient(180deg, #1e5a8e 0%, #164870 50%, #0f2e45 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 70% 70%, rgba(14, 158, 150, 0.06) 0%, transparent 50%);
+            opacity: 0.5;
         }
 
         .faq-list {
             max-width: 900px;
             margin: 60px auto 0;
+            position: relative;
+            z-index: 1;
         }
 
         .faq-item {
@@ -636,13 +876,28 @@
             margin-bottom: 16px;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             border: 2px solid transparent;
             transition: all 0.3s;
+            position: relative;
         }
 
-        .faq-item:hover {
-            border-color: var(--gold-primary);
+        .faq-item::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: var(--gradient-gold-shine);
+            border-radius: 16px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .faq-item:hover::before {
+            opacity: 0.5;
         }
 
         .faq-question {
@@ -652,19 +907,29 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: var(--gold-primary);
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
             transition: all 0.3s;
             font-size: 18px;
         }
 
+        .faq-question span:first-child {
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .faq-question:hover {
-            background: rgba(212, 175, 55, 0.1);
+            background: linear-gradient(90deg, rgba(255, 215, 0, 0.05), rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
         }
 
         .faq-toggle {
             font-size: 28px;
             font-weight: 700;
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             transition: transform 0.3s;
             flex-shrink: 0;
             margin-left: 16px;
@@ -678,7 +943,7 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease, padding 0.3s ease;
-            color: var(--emerald-dark);
+            color: var(--blue-primary);
             line-height: 1.8;
             font-size: 16px;
         }
@@ -690,10 +955,26 @@
 
         /* Footer */
         .footer {
-            background: linear-gradient(135deg, #052e20 0%, #064e3b 100%);
+            background: linear-gradient(135deg, #0f2e45 0%, #164870 50%, #1e5a8e 100%);
             color: var(--light-text);
             padding: 60px 0 20px;
-            border-top: 3px solid var(--gold-primary);
+            border-top: 3px solid transparent;
+            border-image: var(--gradient-gold-shine) 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(14, 158, 150, 0.05) 0%, transparent 50%);
+            opacity: 0.6;
         }
 
         .footer-content {
@@ -701,10 +982,15 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-section h3 {
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             font-size: 20px;
             margin-bottom: 20px;
             font-family: 'Google Sans', sans-serif;
@@ -732,14 +1018,17 @@
         }
 
         .footer-links a:hover {
-            color: var(--gold-primary);
+            color: var(--gold-light);
             transform: translateX(5px);
+            filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
             padding-top: 24px;
             text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-bottom p {
@@ -747,7 +1036,10 @@
         }
 
         .footer-bottom strong {
-            color: var(--gold-primary);
+            background: var(--gradient-gold-shine);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         /* Floating Buttons */
@@ -770,7 +1062,7 @@
             justify-content: center;
             font-size: 28px;
             text-decoration: none;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px rgba(255, 215, 0, 0.2);
             transition: all 0.3s;
         }
 
@@ -779,12 +1071,12 @@
         }
 
         .phone-btn {
-            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-light) 100%);
+            background: var(--gradient-gold-shine);
         }
 
         .floating-btn:hover {
             transform: scale(1.15) rotate(10deg);
-            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4), 0 0 50px rgba(255, 215, 0, 0.5);
         }
 
         /* Tablet Responsive (768px - 1024px) */
@@ -818,6 +1110,19 @@
 
             .nav-links {
                 display: none;
+            }
+
+            .logo-svg {
+                width: 50px;
+                height: 50px;
+            }
+
+            .logo-text h1 {
+                font-size: 18px;
+            }
+
+            .logo-text .healthcare {
+                font-size: 11px;
             }
 
             .hero {
@@ -890,18 +1195,17 @@
                 padding: 10px 12px;
             }
 
+            .logo-svg {
+                width: 45px;
+                height: 45px;
+            }
+
             .logo-text h1 {
-                font-size: 17px;
+                font-size: 16px;
             }
 
-            .logo-text span {
-                font-size: 11px;
-            }
-
-            .logo-placeholder {
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
+            .logo-text .healthcare {
+                font-size: 10px;
             }
 
             .btn {
@@ -916,7 +1220,7 @@
 
             .hero {
                 padding: 80px 0 40px;
-                margin-top: 90px;
+                margin-top: 85px;
             }
 
             .hero-text h2 {
@@ -1113,7 +1417,12 @@
 
         [dir="rtl"] .feature {
             border-left: none;
-            border-right: 5px solid var(--gold-primary);
+            border-right: 5px solid transparent;
+        }
+
+        [dir="rtl"] .feature::before {
+            left: auto;
+            right: 0;
         }
 
         [dir="rtl"] .feature:hover {
@@ -1161,10 +1470,41 @@
     <header class="header">
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo-placeholder">CN</div>
+                <!-- Care Nova Logo SVG -->
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Gold Circle Border -->
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="url(#goldGradient)" stroke-width="3"/>
+                    
+                    <!-- Blue Water Drop/Leaf -->
+                    <path d="M 35 45 Q 35 30 50 20 Q 65 30 65 45 Q 65 55 50 60 Q 35 55 35 45 Z" fill="url(#blueGradient)"/>
+                    
+                    <!-- Green Leaf -->
+                    <path d="M 50 50 Q 60 50 68 58 Q 70 62 68 66 Q 60 72 50 70 Z" fill="url(#greenGradient)"/>
+                    
+                    <!-- White Medical Cross -->
+                    <rect x="48" y="35" width="4" height="20" fill="white"/>
+                    <rect x="40" y="43" width="20" height="4" fill="white"/>
+                    
+                    <!-- Gradients -->
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FDB931;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#1e5a8e;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4a9fd8;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#7ec845;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a5d96a;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
                 <div class="logo-text">
-                    <h1 data-en="CARE NOVA 24x7" data-ar="كير نوفا ٢٤×٧">CARE NOVA 24x7</h1>
-                    <span data-en="Premium Home Healthcare" data-ar="رعاية صحية منزلية فاخرة">Premium Home Healthcare</span>
+                    <h1 data-en="Care Nova" data-ar="كير نوفا">Care Nova</h1>
+                    <span class="healthcare" data-en="Healthcare" data-ar="للرعاية الصحية">Healthcare</span>
                 </div>
             </div>
             <div class="header-right">
@@ -1206,25 +1546,25 @@
                     <form onsubmit="handleSubmit(event)">
                         <div class="form-group">
                             <label data-en="Full Name *" data-ar="الاسم الكامل *">Full Name *</label>
-                            <input type="text" required placeholder="Enter your full name" data-en="Enter your full name" data-ar="أدخل اسمك الكامل">
+                            <input type="text" required placeholder="Enter your full name">
                         </div>
                         <div class="form-group">
                             <label data-en="Phone Number *" data-ar="رقم الهاتف *">Phone Number *</label>
-                            <input type="tel" required placeholder="+971 XX XXX XXXX" data-en="+971 XX XXX XXXX" data-ar="+971 XX XXX XXXX">
+                            <input type="tel" required placeholder="+971 XX XXX XXXX">
                         </div>
                         <div class="form-group">
                             <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
-                            <input type="email" placeholder="your@email.com" data-en="your@email.com" data-ar="your@email.com">
+                            <input type="email" placeholder="your@email.com">
                         </div>
                         <div class="form-group">
                             <label data-en="Service Needed *" data-ar="الخدمة المطلوبة *">Service Needed *</label>
                             <select required>
-                                <option value="" data-en="Select a service" data-ar="اختر خدمة">Select a service</option>
-                                <option value="doctor" data-en="Doctor On Call" data-ar="طبيب عند الطلب">Doctor On Call</option>
-                                <option value="nursing" data-en="Nursing Care" data-ar="رعاية تمريضية">Nursing Care</option>
-                                <option value="lab" data-en="Lab Tests" data-ar="فحوصات مخبرية">Lab Tests</option>
-                                <option value="physio" data-en="Physiotherapy" data-ar="علاج طبيعي">Physiotherapy</option>
-                                <option value="elderly" data-en="Elderly Care" data-ar="رعاية المسنين">Elderly Care</option>
+                                <option value="">Select a service</option>
+                                <option value="doctor">Doctor On Call</option>
+                                <option value="nursing">Nursing Care</option>
+                                <option value="lab">Lab Tests</option>
+                                <option value="physio">Physiotherapy</option>
+                                <option value="elderly">Elderly Care</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -1233,7 +1573,7 @@
                         </div>
                         <div class="form-group">
                             <label data-en="Additional Notes" data-ar="ملاحظات إضافية">Additional Notes</label>
-                            <textarea placeholder="Any specific requirements..." data-en="Any specific requirements..." data-ar="أي متطلبات محددة..."></textarea>
+                            <textarea placeholder="Any specific requirements..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Book Appointment" data-ar="احجز الآن">Book Appointment</button>
                     </form>
@@ -1279,7 +1619,7 @@
                 <div class="service-card">
                     <span class="service-icon">🏥</span>
                     <h3 data-en="Doctor On Call" data-ar="طبيب عند الطلب">Doctor On Call</h3>
-                    <p data-en="When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home." data-ar="عندما يضرب المرض أو تحتاج إلى عناية طبية فورية، أطباؤنا ذوو الخبرة المرخصون من هيئة الصحة بدبي مستعدون لزيارتك. سواء كان الحمى أو الإنفلونزا أو العدوى أو الفحوصات الروتينية، نقدم فحوصات شاملة وتشخيصات دقيقة وخطط علاج فعالة في منزلك مباشرة.">
+                    <p data-en="When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home." data-ar="عندما يضرب المرض أو تحتاج إلى عناية طبية فورية، أطباؤنا ذوو الخبرة المرخصون من هيئة الصحة بدبي مستعدون لزيارتك.">
                         When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Book Doctor" data-ar="احجز طبيباً">Book Doctor</a>
@@ -1287,64 +1627,64 @@
                 <div class="service-card">
                     <span class="service-icon">💉</span>
                     <h3 data-en="Nursing Care at Home" data-ar="رعاية تمريضية">Nursing Care at Home</h3>
-                    <p data-en="Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions. Our nurses treat every patient with dignity, patience, and genuine compassion." data-ar="تعافى بشكل مريح في المنزل مع فريق التمريض الماهر لدينا. نقدم رعاية ما بعد الجراحة، وإعطاء الأدوية، وضمادات الجروح، والعلاج الوريدي، ورعاية القسطرة، والمراقبة المستمرة للحالات المزمنة. تعامل ممرضاتنا كل مريض بكرامة وصبر وتعاطف حقيقي.">
-                        Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions. Our nurses treat every patient with dignity, patience, and genuine compassion.
+                    <p data-en="Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions." data-ar="تعافى بشكل مريح في المنزل مع فريق التمريض الماهر لدينا.">
+                        Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Book Nurse" data-ar="احجز ممرضة">Book Nurse</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🔬</span>
                     <h3 data-en="Lab Tests at Home" data-ar="فحوصات مخبرية">Lab Tests at Home</h3>
-                    <p data-en="Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, our certified phlebotomists collect samples safely and comfortably. Receive your detailed digital reports within 24-48 hours, with doctor consultations available to explain results." data-ar="تخطى طوابير العيادة واحصل على اختبارات تشخيصية شاملة في الوقت الذي يناسبك. من فحوصات الدم الروتينية إلى الاختبارات المتخصصة، يقوم فلابوتوميستنا المعتمدون بجمع العينات بأمان وراحة. استلم تقاريرك الرقمية التفصيلية في غضون 24-48 ساعة، مع توفر استشارات الأطباء لشرح النتائج.">
-                        Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, our certified phlebotomists collect samples safely and comfortably. Receive your detailed digital reports within 24-48 hours, with doctor consultations available to explain results.
+                    <p data-en="Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, receive your detailed digital reports within 24-48 hours." data-ar="تخطى طوابير العيادة واحصل على اختبارات تشخيصية شاملة.">
+                        Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, receive your detailed digital reports within 24-48 hours.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Book Lab Test" data-ar="احجز فحصاً">Book Lab Test</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🧘</span>
                     <h3 data-en="Physiotherapy at Home" data-ar="علاج طبيعي">Physiotherapy at Home</h3>
-                    <p data-en="Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for post-surgery recovery, sports injuries, chronic pain, stroke rehabilitation, and mobility improvement. We're committed to helping you achieve your recovery goals." data-ar="استعد الحركة والقوة والثقة مع جلسات العلاج الطبيعي الشخصية. يقوم معالجونا الخبراء بإنشاء برامج إعادة تأهيل مخصصة للتعافي بعد الجراحة، والإصابات الرياضية، والألم المزمن، وإعادة تأهيل السكتة الدماغية، وتحسين الحركة. نحن ملتزمون بمساعدتك على تحقيق أهداف التعافي الخاصة بك.">
-                        Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for post-surgery recovery, sports injuries, chronic pain, stroke rehabilitation, and mobility improvement. We're committed to helping you achieve your recovery goals.
+                    <p data-en="Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for your recovery goals." data-ar="استعد الحركة والقوة والثقة مع جلسات العلاج الطبيعي.">
+                        Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for your recovery goals.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Book Session" data-ar="احجز جلسة">Book Session</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">💪</span>
                     <h3 data-en="Wellness & Preventive Care" data-ar="رعاية العافية">Wellness & Preventive Care</h3>
-                    <p data-en="Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, lifestyle consultations, and preventive care plans. Because the best medicine is prevention, and we're here to help you live your healthiest life." data-ar="كن متقدماً على المشاكل الصحية من خلال برامج الصحة الشاملة لدينا. نقدم استشارات غذائية، وعلاج بالفيتامينات، وفحوصات صحية، واستشارات نمط الحياة، وخطط رعاية وقائية. لأن أفضل دواء هو الوقاية، ونحن هنا لمساعدتك على عيش حياة صحية.">
-                        Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, lifestyle consultations, and preventive care plans. Because the best medicine is prevention, and we're here to help you live your healthiest life.
+                    <p data-en="Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, and preventive care plans." data-ar="كن متقدماً على المشاكل الصحية من خلال برامج الصحة الشاملة.">
+                        Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, and preventive care plans.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">👴</span>
                     <h3 data-en="Elderly Care Services" data-ar="رعاية المسنين">Elderly Care Services</h3>
-                    <p data-en="Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, mobility assistance, companionship, and regular health assessments. We treat your elderly loved ones with the respect, patience, and kindness they deserve." data-ar="يستحق كبار السن لدينا أكثر رعاية متعاطفة ممكنة. نقدم خدمات متخصصة لكبار السن بما في ذلك إدارة الأدوية، ومراقبة الأمراض المزمنة، والمساعدة في الحركة، والرفقة، والتقييمات الصحية المنتظمة. نعامل أحبائك المسنين بالاحترام والصبر واللطف الذي يستحقونه.">
-                        Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, mobility assistance, companionship, and regular health assessments. We treat your elderly loved ones with the respect, patience, and kindness they deserve.
+                    <p data-en="Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, and mobility assistance." data-ar="يستحق كبار السن لدينا أكثر رعاية متعاطفة ممكنة.">
+                        Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, and mobility assistance.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">💧</span>
                     <h3 data-en="IV Therapy & NAD+" data-ar="محاليل وريدية">IV Therapy & NAD+</h3>
-                    <p data-en="Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy, each treatment is administered by experienced nurses in your comfortable environment. Feel revitalized and refreshed without leaving home." data-ar="عزز طاقتك ومناعتك وصحتك العامة من خلال علاجات الحقن الوريدي المتميزة لدينا. من الترطيب وكوكتيلات الفيتامينات إلى علاج NAD+ المضاد للشيخوخة، يتم إعطاء كل علاج من قبل ممرضات ذوات خبرة في بيئتك المريحة. اشعر بالنشاط والانتعاش دون مغادرة المنزل.">
-                        Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy, each treatment is administered by experienced nurses in your comfortable environment. Feel revitalized and refreshed without leaving home.
+                    <p data-en="Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy." data-ar="عزز طاقتك ومناعتك وصحتك العامة من خلال علاجات الحقن الوريدي.">
+                        Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">✈️</span>
                     <h3 data-en="Medical Tourism Support" data-ar="السياحة العلاجية">Medical Tourism Support</h3>
-                    <p data-en="Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests. From emergency care to routine medical needs, medication prescriptions to health consultations, we ensure travelers receive prompt, quality healthcare throughout their stay in Dubai." data-ar="تزور دبي وتحتاج إلى رعاية صحية؟ نقدم خدمات طبية شاملة للسياح ونزلاء الفنادق. من الرعاية الطارئة إلى الاحتياجات الطبية الروتينية، ووصفات الأدوية إلى الاستشارات الصحية، نضمن حصول المسافرين على رعاية صحية فورية عالية الجودة طوال إقامتهم في دبي.">
-                        Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests. From emergency care to routine medical needs, medication prescriptions to health consultations, we ensure travelers receive prompt, quality healthcare throughout their stay in Dubai.
+                    <p data-en="Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests with prompt, quality care throughout your stay." data-ar="تزور دبي وتحتاج إلى رعاية صحية؟ نقدم خدمات طبية شاملة للسياح.">
+                        Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests with prompt, quality care throughout your stay.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🩺</span>
                     <h3 data-en="Point-of-Care Testing" data-ar="فحص فوري">Point-of-Care Testing</h3>
-                    <p data-en="Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring and pregnancy tests, receive immediate, accurate results on the spot. Quick decisions, reliable results, and peace of mind - that's our promise." data-ar="احصل على نتائج تشخيصية فورية مع اختبار نقطة الرعاية المتقدم لدينا. من اختبارات COVID-19 والإنفلونزا السريعة إلى مراقبة الجلوكوز واختبارات الحمل، احصل على نتائج فورية ودقيقة في الموقع. قرارات سريعة ونتائج موثوقة وراحة بال - هذا وعدنا.">
-                        Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring and pregnancy tests, receive immediate, accurate results on the spot. Quick decisions, reliable results, and peace of mind - that's our promise.
+                    <p data-en="Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring, receive immediate, accurate results on the spot." data-ar="احصل على نتائج تشخيصية فورية مع اختبار نقطة الرعاية المتقدم.">
+                        Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring, receive immediate, accurate results on the spot.
                     </p>
                     <a href="#booking" class="btn btn-outline" data-en="Book Test" data-ar="احجز اختباراً">Book Test</a>
                 </div>
@@ -1365,21 +1705,21 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3 data-en="Book Online" data-ar="احجز عبر الإنترنت">Book Online</h3>
-                    <p data-en="Choose your service and preferred time slot through our easy booking system or call us directly." data-ar="اختر خدمتك والوقت المفضل من خلال نظام الحجز السهل أو اتصل بنا مباشرة.">
+                    <p data-en="Choose your service and preferred time slot through our easy booking system or call us directly." data-ar="اختر خدمتك والوقت المفضل من خلال نظام الحجز السهل.">
                         Choose your service and preferred time slot through our easy booking system or call us directly.
                     </p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3 data-en="We Come to You" data-ar="نأتي إليك">We Come to You</h3>
-                    <p data-en="Our licensed healthcare professional arrives at your home fully equipped with necessary medical supplies." data-ar="يصل أخصائي الرعاية الصحية المرخص إلى منزلك مجهزاً بالكامل بالمستلزمات الطبية الضرورية.">
+                    <p data-en="Our licensed healthcare professional arrives at your home fully equipped with necessary medical supplies." data-ar="يصل أخصائي الرعاية الصحية المرخص إلى منزلك مجهزاً بالكامل.">
                         Our licensed healthcare professional arrives at your home fully equipped with necessary medical supplies.
                     </p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3 data-en="Receive Quality Care" data-ar="احصل على رعاية عالية الجودة">Receive Quality Care</h3>
-                    <p data-en="Get personalized treatment in the comfort of your home with follow-up support and digital health records." data-ar="احصل على علاج مخصص في راحة منزلك مع دعم المتابعة والسجلات الصحية الرقمية.">
+                    <p data-en="Get personalized treatment in the comfort of your home with follow-up support and digital health records." data-ar="احصل على علاج مخصص في راحة منزلك مع دعم المتابعة.">
                         Get personalized treatment in the comfort of your home with follow-up support and digital health records.
                     </p>
                 </div>
@@ -1391,7 +1731,7 @@
     <section id="about" class="why-choose">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-en="Why Choose CARE NOVA?" data-ar="لماذا تختار كير نوفا؟">Why Choose CARE NOVA?</h2>
+                <h2 class="section-title" data-en="Why Choose Care Nova?" data-ar="لماذا تختار كير نوفا؟">Why Choose Care Nova?</h2>
                 <p class="section-subtitle" data-en="Excellence in every aspect of care delivery" data-ar="التميز في كل جانب من جوانب تقديم الرعاية">Excellence in every aspect of care delivery</p>
             </div>
             <div class="features-grid">
@@ -1424,13 +1764,13 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-en="Hear From Our Happy Patients" data-ar="استمع من مرضانا السعداء">Hear From Our Happy Patients</h2>
-                <p class="section-subtitle" data-en="The trust our patients place in us drives everything we do. These genuine testimonials reflect the care, dedication, and professionalism that define CARE NOVA. Every positive review motivates us to continue providing exceptional healthcare that makes a real difference in people's lives." data-ar="الثقة التي يضعها مرضانا فينا تدفع كل ما نقوم به. تعكس هذه الشهادات الحقيقية الرعاية والتفاني والاحترافية التي تحدد كير نوفا. كل مراجعة إيجابية تحفزنا على الاستمرار في تقديم رعاية صحية استثنائية تحدث فرقاً حقيقياً في حياة الناس.">
-                    The trust our patients place in us drives everything we do. These genuine testimonials reflect the care, dedication, and professionalism that define CARE NOVA. Every positive review motivates us to continue providing exceptional healthcare that makes a real difference in people's lives.
+                <p class="section-subtitle" data-en="The trust our patients place in us drives everything we do. These genuine testimonials reflect the care, dedication, and professionalism that define Care Nova." data-ar="الثقة التي يضعها مرضانا فينا تدفع كل ما نقوم به.">
+                    The trust our patients place in us drives everything we do. These genuine testimonials reflect the care, dedication, and professionalism that define Care Nova.
                 </p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial">
-                    <p class="testimonial-text" data-en="The doctor was professional, caring, and arrived within 30 minutes. Having quality healthcare at home is a game-changer for busy families!" data-ar="كان الطبيب محترفاً ومهتماً ووصل في غضون 30 دقيقة. الحصول على رعاية صحية عالية الجودة في المنزل يغير قواعد اللعبة للعائلات المشغولة!">
+                    <p class="testimonial-text" data-en="The doctor was professional, caring, and arrived within 30 minutes. Having quality healthcare at home is a game-changer for busy families!" data-ar="كان الطبيب محترفاً ومهتماً ووصل في غضون 30 دقيقة.">
                         The doctor was professional, caring, and arrived within 30 minutes. Having quality healthcare at home is a game-changer for busy families!
                     </p>
                     <div class="testimonial-author">
@@ -1443,8 +1783,8 @@
                     <div class="rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text" data-en="Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel comfortable. Highly recommend CARE NOVA!" data-ar="خدمة ممتازة لوالدتي المسنة. كانت الممرضة لطيفة وماهرة وجعلتها تشعر بالراحة. أوصي بشدة بكير نوفا!">
-                        Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel comfortable. Highly recommend CARE NOVA!
+                    <p class="testimonial-text" data-en="Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel comfortable. Highly recommend Care Nova!" data-ar="خدمة ممتازة لوالدتي المسنة.">
+                        Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel comfortable. Highly recommend Care Nova!
                     </p>
                     <div class="testimonial-author">
                         <div class="author-avatar">AK</div>
@@ -1456,7 +1796,7 @@
                     <div class="rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text" data-en="The home lab service was so convenient! Results came quickly and the phlebotomist was very professional. Will definitely use again." data-ar="كانت خدمة المختبر المنزلي مريحة للغاية! جاءت النتائج بسرعة وكان فني المختبر محترفاً للغاية. سأستخدمها بالتأكيد مرة أخرى.">
+                    <p class="testimonial-text" data-en="The home lab service was so convenient! Results came quickly and the phlebotomist was very professional. Will definitely use again." data-ar="كانت خدمة المختبر المنزلي مريحة للغاية!">
                         The home lab service was so convenient! Results came quickly and the phlebotomist was very professional. Will definitely use again.
                     </p>
                     <div class="testimonial-author">
@@ -1487,7 +1827,7 @@
                         <span data-en="Are your healthcare professionals licensed?" data-ar="هل مقدمو الرعاية الصحية لديكم مرخصون؟">Are your healthcare professionals licensed?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="Yes, all our doctors, nurses, and healthcare providers are fully licensed by the Dubai Health Authority (DHA) and meet international standards of care." data-ar="نعم، جميع أطبائنا وممرضاتنا ومقدمي الرعاية الصحية مرخصون بالكامل من قبل هيئة الصحة بدبي ويستوفون المعايير الدولية للرعاية.">
+                    <div class="faq-answer" data-en="Yes, all our doctors, nurses, and healthcare providers are fully licensed by the Dubai Health Authority (DHA) and meet international standards of care." data-ar="نعم، جميع أطبائنا وممرضاتنا ومقدمي الرعاية الصحية مرخصون بالكامل من قبل هيئة الصحة بدبي.">
                         Yes, all our doctors, nurses, and healthcare providers are fully licensed by the Dubai Health Authority (DHA) and meet international standards of care.
                     </div>
                 </div>
@@ -1496,8 +1836,8 @@
                         <span data-en="How quickly can you arrive for urgent care?" data-ar="ما مدى سرعة وصولكم للرعاية العاجلة؟">How quickly can you arrive for urgent care?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="For urgent care requests, we typically arrive within 30-60 minutes depending on your location and our healthcare provider availability. We're available 24/7 for emergencies." data-ar="بالنسبة لطلبات الرعاية العاجلة، نصل عادةً في غضون 30-60 دقيقة اعتماداً على موقعك وتوافر مقدم الرعاية الصحية. نحن متاحون على مدار الساعة طوال أيام الأسبوع لحالات الطوارئ.">
-                        For urgent care requests, we typically arrive within 30-60 minutes depending on your location and our healthcare provider availability. We're available 24/7 for emergencies.
+                    <div class="faq-answer" data-en="For urgent care requests, we typically arrive within 30-60 minutes depending on your location. We're available 24/7 for emergencies." data-ar="بالنسبة لطلبات الرعاية العاجلة، نصل عادةً في غضون 30-60 دقيقة.">
+                        For urgent care requests, we typically arrive within 30-60 minutes depending on your location. We're available 24/7 for emergencies.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1505,8 +1845,8 @@
                         <span data-en="Do you accept insurance?" data-ar="هل تقبلون التأمين؟">Do you accept insurance?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="We work with major insurance providers in the UAE. Please contact us with your insurance details and we'll confirm coverage. We also accept direct payment." data-ar="نعمل مع كبرى شركات التأمين في الإمارات. يرجى الاتصال بنا مع تفاصيل التأمين الخاصة بك وسنؤكد التغطية. نقبل أيضاً الدفع المباشر.">
-                        We work with major insurance providers in the UAE. Please contact us with your insurance details and we'll confirm coverage. We also accept direct payment.
+                    <div class="faq-answer" data-en="We work with major insurance providers in the UAE. Please contact us with your insurance details and we'll confirm coverage." data-ar="نعمل مع كبرى شركات التأمين في الإمارات.">
+                        We work with major insurance providers in the UAE. Please contact us with your insurance details and we'll confirm coverage.
                     </div>
                 </div>
                 <div class="faq-item">
@@ -1514,8 +1854,8 @@
                         <span data-en="How do I receive my lab test results?" data-ar="كيف أحصل على نتائج الفحوصات المخبرية؟">How do I receive my lab test results?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="Lab results are delivered digitally via secure email or through our patient portal, typically within 24-48 hours. Urgent tests can be expedited." data-ar="يتم تسليم نتائج المختبر رقمياً عبر البريد الإلكتروني الآمن أو من خلال بوابة المرضى لدينا، عادةً في غضون 24-48 ساعة. يمكن تسريع الاختبارات العاجلة.">
-                        Lab results are delivered digitally via secure email or through our patient portal, typically within 24-48 hours. Urgent tests can be expedited.
+                    <div class="faq-answer" data-en="Lab results are delivered digitally via secure email or through our patient portal, typically within 24-48 hours." data-ar="يتم تسليم نتائج المختبر رقمياً عبر البريد الإلكتروني الآمن.">
+                        Lab results are delivered digitally via secure email or through our patient portal, typically within 24-48 hours.
                     </div>
                 </div>
             </div>
@@ -1527,9 +1867,9 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3 data-en="CARE NOVA 24x7" data-ar="كير نوفا ٢٤×٧">CARE NOVA 24x7</h3>
-                    <p data-en="We're more than just a healthcare provider - we're your partner in health and wellness. With compassionate care, licensed professionals, and 24/7 availability, we're committed to making quality healthcare accessible, convenient, and personalized for every family in Dubai." data-ar="نحن أكثر من مجرد مقدم رعاية صحية - نحن شريكك في الصحة والعافية. من خلال الرعاية المتعاطفة والمهنيين المرخصين والتوافر على مدار الساعة، نحن ملتزمون بجعل الرعاية الصحية عالية الجودة متاحة ومريحة وشخصية لكل عائلة في دبي.">
-                        We're more than just a healthcare provider - we're your partner in health and wellness. With compassionate care, licensed professionals, and 24/7 availability, we're committed to making quality healthcare accessible, convenient, and personalized for every family in Dubai.
+                    <h3 data-en="Care Nova Healthcare" data-ar="كير نوفا للرعاية الصحية">Care Nova Healthcare</h3>
+                    <p data-en="We're more than just a healthcare provider - we're your partner in health and wellness. With compassionate care, licensed professionals, and 24/7 availability." data-ar="نحن أكثر من مجرد مقدم رعاية صحية - نحن شريكك في الصحة والعافية.">
+                        We're more than just a healthcare provider - we're your partner in health and wellness. With compassionate care, licensed professionals, and 24/7 availability.
                     </p>
                 </div>
                 <div class="footer-section">
@@ -1553,19 +1893,16 @@
                 <div class="footer-section">
                     <h3 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h3>
                     <p data-en="📞 Phone: +971 XX XXX XXXX" data-ar="📞 الهاتف: +971 XX XXX XXXX">📞 Phone: +971 XX XXX XXXX</p>
-                    <p data-en="📧 Email: info@carenovadubai.com" data-ar="📧 البريد: info@carenovadubai.com">📧 Email: info@carenovadubai.com</p>
+                    <p data-en="📧 Email: info@carenova.ae" data-ar="📧 البريد: info@carenova.ae">📧 Email: info@carenova.ae</p>
                     <p data-en="📍 Dubai, UAE" data-ar="📍 دبي، الإمارات">📍 Dubai, UAE</p>
                     <p data-en="🕐 24/7 Available" data-ar="🕐 متاح على مدار الساعة">🕐 24/7 Available</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-en="© 2025 CARE NOVA 24x7. All rights reserved. | Licensed by Dubai Health Authority (DHA)" data-ar="© 2025 كير نوفا ٢٤×٧. جميع الحقوق محفوظة. | مرخص من قبل هيئة الصحة بدبي">
-                    © 2025 CARE NOVA 24x7. All rights reserved. | Licensed by Dubai Health Authority (DHA)
+                <p data-en="© 2025 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)" data-ar="© 2025 كير نوفا للرعاية الصحية. جميع الحقوق محفوظة.">
+                    © 2025 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)
                 </p>
-                <p style="margin-top: 10px;">
-                    <span data-en="Developed by" data-ar="تطوير">Developed by</span> 
-                    <strong style="color: var(--gold-primary);">AASAI TECH PROVIDERS PRIVATE LIMITED</strong>
-                </p>
+               
             </div>
         </div>
     </footer>
