@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARE NOVA 24x7 - Premium Home Healthcare in Dubai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,18 +25,19 @@
             --teal-light: #1fc9be;
             --green-leaf: #7ec845;
             --green-bright: #a5d96a;
-            
+
             /* Premium Luxury Gold Palette (from reference) */
-            --gold-lightest: #f9f295;
-            --gold-light: #faf398;
-            --gold-bright: #e0aa3e;
-            --gold-primary: #d4a745;
-            --gold-medium: #c9a050;
-            --gold-rich: #b88a44;
-            --gold-deep: #a67c3b;
-            --gold-dark: #8b6f3f;
-            --gold-metallic: #d4af37;
-            
+            --gold-lightest: #fff6bf;
+            --gold-light: #ffe8a3;
+            --gold-bright: #f2c76e;
+            --gold-primary: #e8b451;
+            --gold-medium: #d9a44a;
+            --gold-rich: #c28f42;
+            --gold-deep: #b07d38;
+            --gold-dark: #9a6d32;
+            --gold-metallic: #f0d28a;
+
+
             /* Black/Dark Backgrounds */
             --black-primary: #0a0a0a;
             --black-secondary: #1a1a1a;
@@ -41,7 +45,7 @@
             --black-lighter: #3a3a3a;
             --dark-charcoal: #1e1e1e;
             --dark-grey: #2d2d2d;
-            
+
             /* Premium Metallic Gold Gradients */
             --gradient-gold-luxury: linear-gradient(135deg, #f9f295 0%, #e0aa3e 15%, #d4a745 30%, #c9a050 50%, #b88a44 70%, #a67c3b 85%, #8b6f3f 100%);
             --gradient-gold-shine: linear-gradient(135deg, #f9f295 0%, #faf398 10%, #e0aa3e 25%, #d4a745 40%, #c9a050 55%, #b88a44 70%, #a67c3b 85%, #8b6f3f 100%);
@@ -49,17 +53,17 @@
             --gradient-gold-reflected: linear-gradient(90deg, #8b6f3f 0%, #b88a44 20%, #e0aa3e 40%, #f9f295 50%, #e0aa3e 60%, #b88a44 80%, #8b6f3f 100%);
             --gradient-gold-angle: linear-gradient(45deg, #8b6f3f 0%, #a67c3b 25%, #c9a050 50%, #e0aa3e 75%, #f9f295 100%);
             --gradient-gold-premium: linear-gradient(135deg, #f9f295 0%, #e0aa3e 20%, #d4a745 35%, #c9a050 50%, #b88a44 65%, #a67c3b 80%, #8b6f3f 100%);
-            
+
             /* Dark Background Gradients */
             --gradient-black-primary: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
             --gradient-black-secondary: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 50%, #1e1e1e 100%);
             --gradient-black-light: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-            
+
             /* Text Colors */
             --dark-text: #1a202c;
             --light-text: #f0f9ff;
             --white: #ffffff;
-            
+
             /* Surfaces */
             --card-bg: rgba(255, 255, 255, 0.98);
             --overlay-dark: rgba(10, 10, 10, 0.85);
@@ -123,6 +127,7 @@
             from {
                 filter: drop-shadow(0 2px 8px rgba(212, 167, 69, 0.4));
             }
+
             to {
                 filter: drop-shadow(0 4px 16px rgba(249, 242, 149, 0.6));
             }
@@ -268,8 +273,13 @@
         }
 
         @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
         }
 
         .btn-primary:hover {
@@ -306,7 +316,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 30%, rgba(249, 242, 149, 0.12) 0%, transparent 50%),
                 radial-gradient(circle at 80% 70%, rgba(126, 200, 69, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(14, 158, 150, 0.08) 0%, transparent 60%),
@@ -440,7 +450,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 30% 50%, rgba(249, 242, 149, 0.18) 0%, transparent 50%),
                 radial-gradient(circle at 70% 50%, rgba(212, 167, 69, 0.12) 0%, transparent 50%);
             opacity: 0.7;
@@ -521,7 +531,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 20%, rgba(249, 242, 149, 0.12) 0%, transparent 40%),
                 radial-gradient(circle at 80% 80%, rgba(126, 200, 69, 0.08) 0%, transparent 40%);
             opacity: 0.5;
@@ -605,12 +615,12 @@
         }
 
         .service-card h3 {
-    font-size: 24px;
-    color: var(--blue-primary);
-    margin-bottom: 16px;
-    font-family: 'Google Sans', sans-serif;
-    font-weight: 700;
-}
+            font-size: 24px;
+            color: var(--blue-primary);
+            margin-bottom: 16px;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 700;
+        }
 
         .service-card p {
             color: var(--blue-primary);
@@ -633,7 +643,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 40% 30%, rgba(249, 242, 149, 0.14) 0%, transparent 50%),
                 radial-gradient(circle at 60% 70%, rgba(126, 200, 69, 0.1) 0%, transparent 50%);
             opacity: 0.6;
@@ -683,7 +693,7 @@
             filter: drop-shadow(0 2px 4px rgba(212, 167, 69, 0.3));
         }
 
-        
+
 
         .step p {
             color: var(--light-text);
@@ -705,7 +715,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 25% 25%, rgba(249, 242, 149, 0.18) 0%, transparent 45%),
                 radial-gradient(circle at 75% 75%, rgba(30, 90, 142, 0.1) 0%, transparent 45%);
             opacity: 0.5;
@@ -793,7 +803,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 35% 40%, rgba(249, 242, 149, 0.12) 0%, transparent 50%),
                 radial-gradient(circle at 65% 60%, rgba(126, 200, 69, 0.08) 0%, transparent 50%);
             opacity: 0.6;
@@ -905,7 +915,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 30% 30%, rgba(249, 242, 149, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 70% 70%, rgba(14, 158, 150, 0.06) 0%, transparent 50%);
             opacity: 0.5;
@@ -1018,7 +1028,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
+            background:
                 radial-gradient(circle at 20% 50%, rgba(249, 242, 149, 0.08) 0%, transparent 50%),
                 radial-gradient(circle at 80% 50%, rgba(14, 158, 150, 0.05) 0%, transparent 50%);
             opacity: 0.6;
@@ -1513,8 +1523,16 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        @media(max-width:640px) {
+            .logo-text h1 {
+                font-size: 16px;
+                white-space: nowrap;
+            }
+        }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -1523,18 +1541,19 @@
                 <!-- Care Nova Logo SVG -->
                 <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                     <!-- Gold Circle Border -->
-                    <circle cx="50" cy="50" r="48" fill="none" stroke="url(#goldGradient)" stroke-width="3"/>
-                    
+                    <circle cx="50" cy="50" r="48" fill="none" stroke="url(#goldGradient)" stroke-width="3" />
+
                     <!-- Blue Water Drop/Leaf -->
-                    <path d="M 35 45 Q 35 30 50 20 Q 65 30 65 45 Q 65 55 50 60 Q 35 55 35 45 Z" fill="url(#blueGradient)"/>
-                    
+                    <path d="M 35 45 Q 35 30 50 20 Q 65 30 65 45 Q 65 55 50 60 Q 35 55 35 45 Z"
+                        fill="url(#blueGradient)" />
+
                     <!-- Green Leaf -->
-                    <path d="M 50 50 Q 60 50 68 58 Q 70 62 68 66 Q 60 72 50 70 Z" fill="url(#greenGradient)"/>
-                    
+                    <path d="M 50 50 Q 60 50 68 58 Q 70 62 68 66 Q 60 72 50 70 Z" fill="url(#greenGradient)" />
+
                     <!-- White Medical Cross -->
-                    <rect x="48" y="35" width="4" height="20" fill="white"/>
-                    <rect x="40" y="43" width="20" height="4" fill="white"/>
-                    
+                    <rect x="48" y="35" width="4" height="20" fill="white" />
+                    <rect x="40" y="43" width="20" height="4" fill="white" />
+
                     <!-- Gradients -->
                     <defs>
                         <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -1585,12 +1604,16 @@
                     <h2 data-en="Premium Healthcare at Your Doorstep" data-ar="رعاية صحية متميزة عند عتبة بابك">
                         Premium Healthcare at Your Doorstep
                     </h2>
-                    <p data-en="Experience world-class medical care in the comfort of your home. Licensed DHA professionals, 24/7 availability, personalized compassionate care for your entire family." data-ar="استمتع برعاية طبية عالمية المستوى في راحة منزلك. متخصصون مرخصون من هيئة الصحة بدبي، متاحون على مدار الساعة، ورعاية متعاطفة ومخصصة لجميع أفراد عائلتك.">
-                        Experience world-class medical care in the comfort of your home. Licensed DHA professionals, 24/7 availability, compassionate and personalized health care for your entire family.
+                    <p data-en="Experience world-class medical care in the comfort of your home. Licensed DHA professionals, 24/7 availability, personalized compassionate care for your entire family."
+                        data-ar="استمتع برعاية طبية عالمية المستوى في راحة منزلك. متخصصون مرخصون من هيئة الصحة بدبي، متاحون على مدار الساعة، ورعاية متعاطفة ومخصصة لجميع أفراد عائلتك.">
+                        Experience world-class medical care in the comfort of your home. Licensed DHA professionals,
+                        24/7 availability, compassionate and personalized health care for your entire family.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#booking" class="btn btn-primary" data-en="Book Appointment" data-ar="احجز موعداً">Book Appointment</a>
-                        <a href="#services" class="btn btn-outline" data-en="Our Services" data-ar="خدماتنا">Our Services</a>
+                        <a href="#booking" class="btn btn-primary" data-en="Book Appointment" data-ar="احجز موعداً">Book
+                            Appointment</a>
+                        <a href="#services" class="btn btn-outline" data-en="Our Services" data-ar="خدماتنا">Our
+                            Services</a>
                     </div>
                 </div>
                 <div id="booking" class="booking-form">
@@ -1620,14 +1643,16 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label data-en="Preferred Date & Time" data-ar="التاريخ والوقت المفضل">Preferred Date & Time</label>
+                            <label data-en="Preferred Date & Time" data-ar="التاريخ والوقت المفضل">Preferred Date &
+                                Time</label>
                             <input type="datetime-local">
                         </div>
                         <div class="form-group">
                             <label data-en="Additional Notes" data-ar="ملاحظات إضافية">Additional Notes</label>
                             <textarea placeholder="Any specific requirements..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Book Appointment" data-ar="احجز الآن">Book Appointment</button>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-en="Book Appointment"
+                            data-ar="احجز الآن">Book Appointment</button>
                     </form>
                 </div>
             </div>
@@ -1644,7 +1669,8 @@
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-en="100+" data-ar="١٠٠+">100+</div>
-                    <div class="stat-label" data-en="Healthcare Professionals" data-ar="متخصصون في الرعاية الصحية">Healthcare Professionals</div>
+                    <div class="stat-label" data-en="Healthcare Professionals" data-ar="متخصصون في الرعاية الصحية">
+                        Healthcare Professionals</div>
                 </div>
                 <div class="stat-item">
                     <div class="stat-number" data-en="24/7" data-ar="٢٤/٧">24/7</div>
@@ -1662,81 +1688,110 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-en="Our Premium Services" data-ar="خدماتنا المتميزة">Our Premium Services</h2>
-                <p class="section-subtitle" data-en="Comprehensive healthcare solutions designed for your comfort and well-being. Every service is delivered by certified professionals with compassion and expertise." data-ar="حلول رعاية صحية شاملة مصممة لراحتك وعافيتك. يتم تقديم كل خدمة من قبل متخصصين معتمدين مع التعاطف والخبرة.">
-                    Comprehensive healthcare solutions designed for your comfort and well-being. Every service is delivered by certified professionals with compassion and expertise.
+                <h2 class="section-title" data-en="Our Premium Services" data-ar="خدماتنا المتميزة">Our Premium Services
+                </h2>
+                <p class="section-subtitle"
+                    data-en="Comprehensive healthcare solutions designed for your comfort and well-being. Every service is delivered by certified professionals with compassion and expertise."
+                    data-ar="حلول رعاية صحية شاملة مصممة لراحتك وعافيتك. يتم تقديم كل خدمة من قبل متخصصين معتمدين مع التعاطف والخبرة.">
+                    Comprehensive healthcare solutions designed for your comfort and well-being. Every service is
+                    delivered by certified professionals with compassion and expertise.
                 </p>
             </div>
             <div class="service-grid">
                 <div class="service-card">
                     <span class="service-icon">🏥</span>
                     <h3 data-en="Doctor On Call" data-ar="طبيب عند الطلب">Doctor On Call</h3>
-                    <p data-en="When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home." data-ar="عندما يضرب المرض أو تحتاج إلى عناية طبية فورية، أطباؤنا ذوو الخبرة المرخصون من هيئة الصحة بدبي مستعدون لزيارتك.">
-                        When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home.
+                    <p data-en="When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home."
+                        data-ar="عندما يضرب المرض أو تحتاج إلى عناية طبية فورية، أطباؤنا ذوو الخبرة المرخصون من هيئة الصحة بدبي مستعدون لزيارتك.">
+                        When illness strikes or you need immediate medical attention, our experienced DHA-licensed
+                        physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we
+                        provide thorough examinations, accurate diagnoses, and effective treatment plans right in your
+                        home.
                     </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Doctor" data-ar="احجز طبيباً">Book Doctor</a>
+                    <a href="#booking" class="btn btn-primary" data-en="Book Doctor" data-ar="احجز طبيباً">Book
+                        Doctor</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">💉</span>
                     <h3 data-en="Nursing Care at Home" data-ar="رعاية تمريضية">Nursing Care at Home</h3>
-                    <p data-en="Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions." data-ar="تعافى بشكل مريح في المنزل مع فريق التمريض الماهر لدينا.">
-                        Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions.
+                    <p data-en="Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions."
+                        data-ar="تعافى بشكل مريح في المنزل مع فريق التمريض الماهر لدينا.">
+                        Recover comfortably at home with our skilled nursing team. We provide post-operative care,
+                        medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring
+                        for chronic conditions.
                     </p>
                     <a href="#booking" class="btn btn-primary" data-en="Book Nurse" data-ar="احجز ممرضة">Book Nurse</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🔬</span>
                     <h3 data-en="Lab Tests at Home" data-ar="فحوصات مخبرية">Lab Tests at Home</h3>
-                    <p data-en="Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, receive your detailed digital reports within 24-48 hours." data-ar="تخطى طوابير العيادة واحصل على اختبارات تشخيصية شاملة.">
-                        Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, receive your detailed digital reports within 24-48 hours.
+                    <p data-en="Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, receive your detailed digital reports within 24-48 hours."
+                        data-ar="تخطى طوابير العيادة واحصل على اختبارات تشخيصية شاملة.">
+                        Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From
+                        routine blood work to specialized tests, receive your detailed digital reports within 24-48
+                        hours.
                     </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Lab Test" data-ar="احجز فحصاً">Book Lab Test</a>
+                    <a href="#booking" class="btn btn-primary" data-en="Book Lab Test" data-ar="احجز فحصاً">Book Lab
+                        Test</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🧘</span>
                     <h3 data-en="Physiotherapy at Home" data-ar="علاج طبيعي">Physiotherapy at Home</h3>
-                    <p data-en="Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for your recovery goals." data-ar="استعد الحركة والقوة والثقة مع جلسات العلاج الطبيعي.">
-                        Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for your recovery goals.
+                    <p data-en="Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for your recovery goals."
+                        data-ar="استعد الحركة والقوة والثقة مع جلسات العلاج الطبيعي.">
+                        Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert
+                        therapists create customized rehabilitation programs for your recovery goals.
                     </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Session" data-ar="احجز جلسة">Book Session</a>
+                    <a href="#booking" class="btn btn-primary" data-en="Book Session" data-ar="احجز جلسة">Book
+                        Session</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">💪</span>
                     <h3 data-en="Wellness & Preventive Care" data-ar="رعاية العافية">Wellness & Preventive Care</h3>
-                    <p data-en="Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, and preventive care plans." data-ar="كن متقدماً على المشاكل الصحية من خلال برامج الصحة الشاملة.">
-                        Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, and preventive care plans.
+                    <p data-en="Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, and preventive care plans."
+                        data-ar="كن متقدماً على المشاكل الصحية من خلال برامج الصحة الشاملة.">
+                        Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional
+                        counseling, vitamin therapy, health screenings, and preventive care plans.
                     </p>
                     <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">👴</span>
                     <h3 data-en="Elderly Care Services" data-ar="رعاية المسنين">Elderly Care Services</h3>
-                    <p data-en="Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, and mobility assistance." data-ar="يستحق كبار السن لدينا أكثر رعاية متعاطفة ممكنة.">
-                        Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, and mobility assistance.
+                    <p data-en="Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, and mobility assistance."
+                        data-ar="يستحق كبار السن لدينا أكثر رعاية متعاطفة ممكنة.">
+                        Our seniors deserve the most compassionate care possible. We provide specialized geriatric
+                        services including medication management, chronic disease monitoring, and mobility assistance.
                     </p>
                     <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">💧</span>
                     <h3 data-en="IV Therapy & NAD+" data-ar="محاليل وريدية">IV Therapy & NAD+</h3>
-                    <p data-en="Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy." data-ar="عزز طاقتك ومناعتك وصحتك العامة من خلال علاجات الحقن الوريدي.">
-                        Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy.
+                    <p data-en="Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy."
+                        data-ar="عزز طاقتك ومناعتك وصحتك العامة من خلال علاجات الحقن الوريدي.">
+                        Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From
+                        hydration and vitamin cocktails to anti-aging NAD+ therapy.
                     </p>
                     <a href="#booking" class="btn btn-primary" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">✈️</span>
                     <h3 data-en="Medical Tourism Support" data-ar="السياحة العلاجية">Medical Tourism Support</h3>
-                    <p data-en="Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests with prompt, quality care throughout your stay." data-ar="تزور دبي وتحتاج إلى رعاية صحية؟ نقدم خدمات طبية شاملة للسياح.">
-                        Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests with prompt, quality care throughout your stay.
+                    <p data-en="Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests with prompt, quality care throughout your stay."
+                        data-ar="تزور دبي وتحتاج إلى رعاية صحية؟ نقدم خدمات طبية شاملة للسياح.">
+                        Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and
+                        hotel guests with prompt, quality care throughout your stay.
                     </p>
                     <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
                 </div>
                 <div class="service-card">
                     <span class="service-icon">🩺</span>
                     <h3 data-en="Point-of-Care Testing" data-ar="فحص فوري">Point-of-Care Testing</h3>
-                    <p data-en="Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring, receive immediate, accurate results on the spot." data-ar="احصل على نتائج تشخيصية فورية مع اختبار نقطة الرعاية المتقدم.">
-                        Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring, receive immediate, accurate results on the spot.
+                    <p data-en="Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring, receive immediate, accurate results on the spot."
+                        data-ar="احصل على نتائج تشخيصية فورية مع اختبار نقطة الرعاية المتقدم.">
+                        Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and
+                        flu tests to glucose monitoring, receive immediate, accurate results on the spot.
                     </p>
                     <a href="#booking" class="btn btn-primary" data-en="Book Test" data-ar="احجز اختباراً">Book Test</a>
                 </div>
@@ -1749,7 +1804,8 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title" data-en="How It Works" data-ar="كيف يعمل">How It Works</h2>
-                <p class="section-subtitle" data-en="Get professional healthcare in three simple steps" data-ar="احصل على رعاية صحية محترفة في ثلاث خطوات بسيطة">
+                <p class="section-subtitle" data-en="Get professional healthcare in three simple steps"
+                    data-ar="احصل على رعاية صحية محترفة في ثلاث خطوات بسيطة">
                     Get professional healthcare in three simple steps
                 </p>
             </div>
@@ -1757,22 +1813,27 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3 data-en="Book Online" data-ar="احجز عبر الإنترنت">Book Online</h3>
-                    <p data-en="Choose your service and preferred time slot through our easy booking system or call us directly." data-ar="اختر خدمتك والوقت المفضل من خلال نظام الحجز السهل.">
+                    <p data-en="Choose your service and preferred time slot through our easy booking system or call us directly."
+                        data-ar="اختر خدمتك والوقت المفضل من خلال نظام الحجز السهل.">
                         Choose your service and preferred time slot through our easy booking system or call us directly.
                     </p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3 data-en="We Come to You" data-ar="نأتي إليك">We Come to You</h3>
-                    <p data-en="Our licensed healthcare professional arrives at your home fully equipped with necessary medical supplies." data-ar="يصل أخصائي الرعاية الصحية المرخص إلى منزلك مجهزاً بالكامل.">
-                        Our licensed healthcare professional arrives at your home fully equipped with necessary medical supplies.
+                    <p data-en="Our licensed healthcare professional arrives at your home fully equipped with necessary medical supplies."
+                        data-ar="يصل أخصائي الرعاية الصحية المرخص إلى منزلك مجهزاً بالكامل.">
+                        Our licensed healthcare professional arrives at your home fully equipped with necessary medical
+                        supplies.
                     </p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3 data-en="Receive Quality Care" data-ar="احصل على رعاية عالية الجودة">Receive Quality Care</h3>
-                    <p data-en="Get personalized treatment in the comfort of your home with follow-up support and digital health records." data-ar="احصل على علاج مخصص في راحة منزلك مع دعم المتابعة.">
-                        Get personalized treatment in the comfort of your home with follow-up support and digital health records.
+                    <p data-en="Get personalized treatment in the comfort of your home with follow-up support and digital health records."
+                        data-ar="احصل على علاج مخصص في راحة منزلك مع دعم المتابعة.">
+                        Get personalized treatment in the comfort of your home with follow-up support and digital health
+                        records.
                     </p>
                 </div>
             </div>
@@ -1783,29 +1844,36 @@
     <section id="about" class="why-choose">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-en="Why Choose Care Nova?" data-ar="لماذا تختار كير نوفا؟">Why Choose Care Nova?</h2>
-                <p class="section-subtitle" data-en="Excellence in every aspect of care delivery" data-ar="التميز في كل جانب من جوانب تقديم الرعاية">Excellence in every aspect of care delivery</p>
+                <h2 class="section-title" data-en="Why Choose Care Nova?" data-ar="لماذا تختار كير نوفا؟">Why Choose
+                    Care Nova?</h2>
+                <p class="section-subtitle" data-en="Excellence in every aspect of care delivery"
+                    data-ar="التميز في كل جانب من جوانب تقديم الرعاية">Excellence in every aspect of care delivery</p>
             </div>
             <div class="features-grid">
                 <div class="feature">
                     <span class="feature-icon">✓</span>
                     <h3 data-en="Licensed Professionals" data-ar="متخصصون مرخصون">Licensed Professionals</h3>
-                    <p data-en="DHA-certified doctors and healthcare providers" data-ar="أطباء ومقدمو رعاية صحية معتمدون من هيئة الصحة">DHA-certified doctors and healthcare providers</p>
+                    <p data-en="DHA-certified doctors and healthcare providers"
+                        data-ar="أطباء ومقدمو رعاية صحية معتمدون من هيئة الصحة">DHA-certified doctors and healthcare
+                        providers</p>
                 </div>
                 <div class="feature">
                     <span class="feature-icon">⚡</span>
                     <h3 data-en="24/7 Availability" data-ar="متاح على مدار الساعة">24/7 Availability</h3>
-                    <p data-en="Round-the-clock care whenever you need it" data-ar="رعاية على مدار الساعة عندما تحتاج إليها">Round-the-clock care whenever you need it</p>
+                    <p data-en="Round-the-clock care whenever you need it"
+                        data-ar="رعاية على مدار الساعة عندما تحتاج إليها">Round-the-clock care whenever you need it</p>
                 </div>
                 <div class="feature">
                     <span class="feature-icon">❤️</span>
                     <h3 data-en="Personalized Treatment" data-ar="علاج شخصي">Personalized Treatment</h3>
-                    <p data-en="Customized care plans for your unique needs" data-ar="خطط رعاية مخصصة لاحتياجاتك الفريدة">Customized care plans for your unique needs</p>
+                    <p data-en="Customized care plans for your unique needs"
+                        data-ar="خطط رعاية مخصصة لاحتياجاتك الفريدة">Customized care plans for your unique needs</p>
                 </div>
                 <div class="feature">
                     <span class="feature-icon">🛡️</span>
                     <h3 data-en="Prevention Focus" data-ar="التركيز على الوقاية">Prevention Focus</h3>
-                    <p data-en="Proactive health management and wellness" data-ar="إدارة الصحة الاستباقية والعافية">Proactive health management and wellness</p>
+                    <p data-en="Proactive health management and wellness" data-ar="إدارة الصحة الاستباقية والعافية">
+                        Proactive health management and wellness</p>
                 </div>
             </div>
         </div>
@@ -1815,15 +1883,22 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-en="Hear From Our Happy Patients" data-ar="استمع من مرضانا السعداء">Hear From Our Happy Patients</h2>
-                <p class="section-subtitle" data-en="The trust our patients place in us drives everything we do. These genuine testimonials reflect the care, dedication, and professionalism that define Care Nova." data-ar="الثقة التي يضعها مرضانا فينا تدفع كل ما نقوم به.">
-                    The trust our patients place in us drives everything we do. These genuine testimonials reflect the care, dedication, and professionalism that define Care Nova.
+                <h2 class="section-title" data-en="Hear From Our Happy Patients" data-ar="استمع من مرضانا السعداء">Hear
+                    From Our Happy Patients</h2>
+                <p class="section-subtitle"
+                    data-en="The trust our patients place in us drives everything we do. These genuine testimonials reflect the care, dedication, and professionalism that define Care Nova."
+                    data-ar="الثقة التي يضعها مرضانا فينا تدفع كل ما نقوم به.">
+                    The trust our patients place in us drives everything we do. These genuine testimonials reflect the
+                    care, dedication, and professionalism that define Care Nova.
                 </p>
             </div>
             <div class="testimonial-grid">
                 <div class="testimonial">
-                    <p class="testimonial-text" data-en="The doctor was professional, caring, and arrived within 30 minutes. Having quality healthcare at home is a game-changer for busy families!" data-ar="كان الطبيب محترفاً ومهتماً ووصل في غضون 30 دقيقة.">
-                        The doctor was professional, caring, and arrived within 30 minutes. Having quality healthcare at home is a game-changer for busy families!
+                    <p class="testimonial-text"
+                        data-en="The doctor was professional, caring, and arrived within 30 minutes. Having quality healthcare at home is a game-changer for busy families!"
+                        data-ar="كان الطبيب محترفاً ومهتماً ووصل في غضون 30 دقيقة.">
+                        The doctor was professional, caring, and arrived within 30 minutes. Having quality healthcare at
+                        home is a game-changer for busy families!
                     </p>
                     <div class="testimonial-author">
                         <div class="author-avatar">SM</div>
@@ -1835,8 +1910,11 @@
                     <div class="rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text" data-en="Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel comfortable. Highly recommend Care Nova!" data-ar="خدمة ممتازة لوالدتي المسنة.">
-                        Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel comfortable. Highly recommend Care Nova!
+                    <p class="testimonial-text"
+                        data-en="Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel comfortable. Highly recommend Care Nova!"
+                        data-ar="خدمة ممتازة لوالدتي المسنة.">
+                        Excellent service for my elderly mother. The nurse was kind, skilled, and made her feel
+                        comfortable. Highly recommend Care Nova!
                     </p>
                     <div class="testimonial-author">
                         <div class="author-avatar">AK</div>
@@ -1848,8 +1926,11 @@
                     <div class="rating">⭐⭐⭐⭐⭐</div>
                 </div>
                 <div class="testimonial">
-                    <p class="testimonial-text" data-en="The home lab service was so convenient! Results came quickly and the phlebotomist was very professional. Will definitely use again." data-ar="كانت خدمة المختبر المنزلي مريحة للغاية!">
-                        The home lab service was so convenient! Results came quickly and the phlebotomist was very professional. Will definitely use again.
+                    <p class="testimonial-text"
+                        data-en="The home lab service was so convenient! Results came quickly and the phlebotomist was very professional. Will definitely use again."
+                        data-ar="كانت خدمة المختبر المنزلي مريحة للغاية!">
+                        The home lab service was so convenient! Results came quickly and the phlebotomist was very
+                        professional. Will definitely use again.
                     </p>
                     <div class="testimonial-author">
                         <div class="author-avatar">LP</div>
@@ -1868,46 +1949,66 @@
     <section class="faq">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
-                <p class="section-subtitle" data-en="Find answers to common questions about our services" data-ar="ابحث عن إجابات للأسئلة الشائعة حول خدماتنا">
+                <h2 class="section-title" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently
+                    Asked Questions</h2>
+                <p class="section-subtitle" data-en="Find answers to common questions about our services"
+                    data-ar="ابحث عن إجابات للأسئلة الشائعة حول خدماتنا">
                     Find answers to common questions about our services
                 </p>
             </div>
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span data-en="Are your healthcare professionals licensed?" data-ar="هل مقدمو الرعاية الصحية لديكم مرخصون؟">Are your healthcare professionals licensed?</span>
+                        <span data-en="Are your healthcare professionals licensed?"
+                            data-ar="هل مقدمو الرعاية الصحية لديكم مرخصون؟">Are your healthcare professionals
+                            licensed?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="Yes, all our doctors, nurses, and healthcare providers are fully licensed by the Dubai Health Authority (DHA) and meet international standards of care." data-ar="نعم، جميع أطبائنا وممرضاتنا ومقدمي الرعاية الصحية مرخصون بالكامل من قبل هيئة الصحة بدبي.">
-                        Yes, all our doctors, nurses, and healthcare providers are fully licensed by the Dubai Health Authority (DHA) and meet international standards of care.
+                    <div class="faq-answer"
+                        data-en="Yes, all our doctors, nurses, and healthcare providers are fully licensed by the Dubai Health Authority (DHA) and meet international standards of care."
+                        data-ar="نعم، جميع أطبائنا وممرضاتنا ومقدمي الرعاية الصحية مرخصون بالكامل من قبل هيئة الصحة بدبي.">
+                        Yes, all our doctors, nurses, and healthcare providers are fully licensed by the Dubai Health
+                        Authority (DHA) and meet international standards of care.
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span data-en="How quickly can you arrive for urgent care?" data-ar="ما مدى سرعة وصولكم للرعاية العاجلة؟">How quickly can you arrive for urgent care?</span>
+                        <span data-en="How quickly can you arrive for urgent care?"
+                            data-ar="ما مدى سرعة وصولكم للرعاية العاجلة؟">How quickly can you arrive for urgent
+                            care?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="For urgent care requests, we typically arrive within 30-60 minutes depending on your location. We're available 24/7 for emergencies." data-ar="بالنسبة لطلبات الرعاية العاجلة، نصل عادةً في غضون 30-60 دقيقة.">
-                        For urgent care requests, we typically arrive within 30-60 minutes depending on your location. We're available 24/7 for emergencies.
+                    <div class="faq-answer"
+                        data-en="For urgent care requests, we typically arrive within 30-60 minutes depending on your location. We're available 24/7 for emergencies."
+                        data-ar="بالنسبة لطلبات الرعاية العاجلة، نصل عادةً في غضون 30-60 دقيقة.">
+                        For urgent care requests, we typically arrive within 30-60 minutes depending on your location.
+                        We're available 24/7 for emergencies.
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span data-en="Do you accept insurance?" data-ar="هل تقبلون التأمين؟">Do you accept insurance?</span>
+                        <span data-en="Do you accept insurance?" data-ar="هل تقبلون التأمين؟">Do you accept
+                            insurance?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="We work with major insurance providers in the UAE. Please contact us with your insurance details and we'll confirm coverage." data-ar="نعمل مع كبرى شركات التأمين في الإمارات.">
-                        We work with major insurance providers in the UAE. Please contact us with your insurance details and we'll confirm coverage.
+                    <div class="faq-answer"
+                        data-en="We work with major insurance providers in the UAE. Please contact us with your insurance details and we'll confirm coverage."
+                        data-ar="نعمل مع كبرى شركات التأمين في الإمارات.">
+                        We work with major insurance providers in the UAE. Please contact us with your insurance details
+                        and we'll confirm coverage.
                     </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        <span data-en="How do I receive my lab test results?" data-ar="كيف أحصل على نتائج الفحوصات المخبرية؟">How do I receive my lab test results?</span>
+                        <span data-en="How do I receive my lab test results?"
+                            data-ar="كيف أحصل على نتائج الفحوصات المخبرية؟">How do I receive my lab test results?</span>
                         <span class="faq-toggle">+</span>
                     </div>
-                    <div class="faq-answer" data-en="Lab results are delivered digitally via secure email or through our patient portal, typically within 24-48 hours." data-ar="يتم تسليم نتائج المختبر رقمياً عبر البريد الإلكتروني الآمن.">
-                        Lab results are delivered digitally via secure email or through our patient portal, typically within 24-48 hours.
+                    <div class="faq-answer"
+                        data-en="Lab results are delivered digitally via secure email or through our patient portal, typically within 24-48 hours."
+                        data-ar="يتم تسليم نتائج المختبر رقمياً عبر البريد الإلكتروني الآمن.">
+                        Lab results are delivered digitally via secure email or through our patient portal, typically
+                        within 24-48 hours.
                     </div>
                 </div>
             </div>
@@ -1920,8 +2021,10 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3 data-en="Care Nova Healthcare" data-ar="كير نوفا للرعاية الصحية">Care Nova Healthcare</h3>
-                    <p data-en="We're more than just a healthcare provider - we're your partner in health and wellness. With compassionate care, licensed professionals, and 24/7 availability." data-ar="نحن أكثر من مجرد مقدم رعاية صحية - نحن شريكك في الصحة والعافية.">
-                        We're more than just a healthcare provider - we're your partner in health and wellness. With compassionate care, licensed professionals, and 24/7 availability.
+                    <p data-en="We're more than just a healthcare provider - we're your partner in health and wellness. With compassionate care, licensed professionals, and 24/7 availability."
+                        data-ar="نحن أكثر من مجرد مقدم رعاية صحية - نحن شريكك في الصحة والعافية.">
+                        We're more than just a healthcare provider - we're your partner in health and wellness. With
+                        compassionate care, licensed professionals, and 24/7 availability.
                     </p>
                 </div>
                 <div class="footer-section">
@@ -1944,14 +2047,17 @@
                 </div>
                 <div class="footer-section">
                     <h3 data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</h3>
-                    <p data-en="📞 Phone: +971 XX XXX XXXX" data-ar="📞 الهاتف: +971 XX XXX XXXX">📞 Phone: +971 XX XXX XXXX</p>
-                    <p data-en="📧 Email: info@carenova.ae" data-ar="📧 البريد: info@carenova.ae">📧 Email: info@carenova.ae</p>
+                    <p data-en="📞 Phone: +971 XX XXX XXXX" data-ar="📞 الهاتف: +971 XX XXX XXXX">📞 Phone: +971 XX XXX
+                        XXXX</p>
+                    <p data-en="📧 Email: info@carenova.ae" data-ar="📧 البريد: info@carenova.ae">📧 Email:
+                        info@carenova.ae</p>
                     <p data-en="📍 Dubai, UAE" data-ar="📍 دبي، الإمارات">📍 Dubai, UAE</p>
                     <p data-en="🕐 24/7 Available" data-ar="🕐 متاح على مدار الساعة">🕐 24/7 Available</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-en="© 2025 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)" data-ar="© 2025 كير نوفا للرعاية الصحية. جميع الحقوق محفوظة.">
+                <p data-en="© 2025 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)"
+                    data-ar="© 2025 كير نوفا للرعاية الصحية. جميع الحقوق محفوظة.">
                     © 2025 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)
                 </p>
             </div>
@@ -1962,7 +2068,8 @@
     <div class="floating-buttons">
         <a href="https://wa.me/971XXXXXXXXX" class="floating-btn whatsapp-btn" title="WhatsApp" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32" height="32">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
             </svg>
         </a>
         <a href="tel:+971XXXXXXXXX" class="floating-btn phone-btn" title="Call Now">
@@ -1977,11 +2084,11 @@
         function setLanguage(lang, element) {
             currentLang = lang;
             const html = document.documentElement;
-            
+
             // Set language and direction
             html.setAttribute('lang', lang);
             html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
-            
+
             // Update all elements with data attributes
             document.querySelectorAll('[data-en][data-ar]').forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
@@ -1993,19 +2100,19 @@
                     el.textContent = text;
                 }
             });
-            
+
             // Update language buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
-            
+
             // Add active class to clicked button
             if (element) {
                 element.classList.add('active');
             } else {
                 // Fallback: find and activate the correct button
                 document.querySelectorAll('.lang-btn').forEach(btn => {
-                    if ((lang === 'en' && btn.textContent === 'EN') || 
+                    if ((lang === 'en' && btn.textContent === 'EN') ||
                         (lang === 'ar' && btn.textContent === 'AR')) {
                         btn.classList.add('active');
                     }
@@ -2017,12 +2124,12 @@
         function toggleFaq(element) {
             const faqItem = element.parentElement;
             const isActive = faqItem.classList.contains('active');
-            
+
             // Close all FAQ items
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
             });
-            
+
             // Open clicked item if it wasn't active
             if (!isActive) {
                 faqItem.classList.add('active');
@@ -2032,8 +2139,8 @@
         // Form Submission
         function handleSubmit(event) {
             event.preventDefault();
-            const message = currentLang === 'ar' 
-                ? 'شكراً لك! سنتصل بك قريباً.' 
+            const message = currentLang === 'ar'
+                ? 'شكراً لك! سنتصل بك قريباً.'
                 : 'Thank you! We will contact you shortly.';
             alert(message);
             event.target.reset();
@@ -2071,6 +2178,82 @@
         document.querySelectorAll('.step, .feature, .testimonial').forEach(el => {
             observer.observe(el);
         });
+        // CARE NOVA BOOKING API
+        const CARE_NOVA_API =
+            // "https://aasai-tech-api.onrender.com/carenova/book-appointment";
+            "http://localhost:3000/carenova/book-appointment";
+
+        // Get Booking Form & Button
+        const bookingForm = document.querySelector(".booking-form form");
+        const bookingBtn = document.querySelector(".booking-form button");
+
+        // Detect Current Language
+        function getCurrentLanguage() {
+            const langBtn = document.querySelector(".lang-btn.active");
+            return langBtn && langBtn.innerText === "AR" ? "ar" : "en";
+        }
+
+        // Toast (Simple)
+        function showAlert(type, message) {
+            alert(message); // You can replace later with premium toast UI
+        }
+
+        // Handle Submit
+        async function handleSubmit(e) {
+            e.preventDefault();
+
+            bookingBtn.disabled = true;
+            bookingBtn.innerText = "Sending...";
+
+            const inputs = bookingForm.querySelectorAll("input, select, textarea");
+
+            const payload = {
+                name: inputs[0].value.trim(),
+                phone: inputs[1].value.trim(),
+                email: inputs[2].value.trim(),
+                service: inputs[3].value,
+                datetime: inputs[4].value,
+                notes: inputs[5].value.trim(),
+                language: getCurrentLanguage()
+            };
+
+            try {
+                const res = await fetch(CARE_NOVA_API, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await res.json();
+
+                if (result.success) {
+                    showAlert("success",
+                        payload.language === "ar"
+                            ? "تم حجز موعدك بنجاح! سنتواصل معك قريباً."
+                            : "Appointment booked successfully! Our team will contact you shortly."
+                    );
+                    bookingForm.reset();
+                } else {
+                    showAlert("error", result.errors?.join(", ") || "Please check your details");
+                }
+
+            } catch (err) {
+                console.error(err);
+                showAlert("error",
+                    getCurrentLanguage() === "ar"
+                        ? "حدث خطأ أثناء إرسال الطلب. يرجى المحاولة لاحقاً"
+                        : "Failed to send request. Please try again later."
+                );
+            } finally {
+                bookingBtn.disabled = false;
+                bookingBtn.innerText =
+                    getCurrentLanguage() === "ar"
+                        ? "احجز الآن"
+                        : "Book Appointment";
+            }
+        }
+
     </script>
 </body>
+
 </html>
