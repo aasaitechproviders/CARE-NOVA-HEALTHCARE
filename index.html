@@ -300,6 +300,131 @@
             border-color: transparent;
         }
 
+        /* Care Pathway Diagram */
+        .care-pathway {
+            margin-top: 50px;
+            text-align: center;
+            width: 100%;
+            max-width: 550px;
+            position: relative;
+        }
+
+        .pathway-title {
+            font-size: 26px;
+            background: var(--gradient-gold-luxury);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 40px;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .pathway-steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Changed from flex-start to center properly */
+            position: relative;
+        }
+
+        /* Connector Arc */
+        .pathway-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 60px;
+            right: 60px;
+            height: 40px;
+            border-top: 2px dashed rgba(212, 167, 69, 0.4);
+            border-radius: 50%;
+            transform: translateY(-20px);
+            z-index: 0;
+            display: none;
+            /* Simplify to straight line first or just rely on layout */
+        }
+
+        .pathway-steps::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50px;
+            right: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-medium), transparent);
+            opacity: 0.3;
+            z-index: 0;
+        }
+
+        .pathway-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+            gap: 12px;
+        }
+
+        .step-icon-box {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: var(--gradient-black-light);
+            border: 2px solid var(--gold-medium);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .pathway-step:hover .step-icon-box {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(212, 167, 69, 0.4);
+            border-color: var(--gold-bright);
+        }
+
+        .step-icon {
+            width: 32px;
+            height: 32px;
+            fill: var(--gold-primary);
+        }
+
+        .step-text {
+            color: var(--gold-light);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 640px) {
+            .pathway-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .pathway-steps::after {
+                display: none;
+            }
+
+            .pathway-steps::before {
+                display: block;
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                border-top: none;
+                border-left: 2px dashed rgba(212, 167, 69, 0.3);
+                border-radius: 0;
+            }
+        }
+
         /* Hero Section */
         .hero {
             background: var(--gradient-black-secondary);
@@ -493,10 +618,10 @@
             background: rgba(255, 255, 255, 0.25);
         }
 
- .stat-item:hover  .stat-number {
--webkit-text-fill-color: white;
+        .stat-item:hover .stat-number {
+            -webkit-text-fill-color: white;
 
-      }
+        }
 
 
 
@@ -1580,7 +1705,7 @@
                     </defs>
                 </svg>
                 <div class="logo-text">
-                    <h1 style="font-size: 32px !important;" data-en="Care Nova" data-ar="كير نوفا">Care Nova</h1>
+                    <h1 data-en="Care Nova" data-ar="كير نوفا">Care Nova</h1>
                     <span class="healthcare" data-en="Healthcare" data-ar="للرعاية الصحية">Healthcare</span>
                 </div>
             </div>
@@ -1606,7 +1731,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text" style="margin-bottom: 250px;">
+                <div class="hero-text">
                     <h2 data-en="Premium Healthcare at Your Doorstep" data-ar="رعاية صحية متميزة عند عتبة بابك">
                         Premium Healthcare at Your Doorstep
                     </h2>
@@ -1620,6 +1745,53 @@
                             Appointment</a>
                         <a href="#services" class="btn btn-outline" data-en="Our Services" data-ar="خدماتنا">Our
                             Services</a>
+                    </div>
+                    <div class="care-pathway">
+                        <h3 class="pathway-title" data-en="Your Home Care Pathway in 3 Easy Steps"
+                            data-ar="مسار رعايتك المنزلية في 3 خطوات بسيطة">Your Home Care Pathway<br>in 3 Easy Steps
+                        </h3>
+
+                        <div class="pathway-steps">
+                            <!-- Step 1 -->
+                            <div class="pathway-step">
+                                <div class="step-icon-box">
+                                    <!-- Phone Icon -->
+                                    <svg class="step-icon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                                    </svg>
+                                </div>
+                                <p class="step-text" data-en="Call Us or Send Us a Message"
+                                    data-ar="اتصل بنا أو أرسل رسالة">Call Us or Send<br>Us a Message</p>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div class="pathway-step">
+                                <p class="step-text" style="order: -1; margin-bottom: 8px;"
+                                    data-en="Share Your Location" data-ar="شارك موقعك">Share Your Location</p>
+                                <div class="step-icon-box">
+                                    <!-- Location Icon -->
+                                    <svg class="step-icon" viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div class="pathway-step">
+                                <div class="step-icon-box"
+                                    style="width: 80px; height: 80px; border-color: var(--gold-bright);">
+                                    <!-- Medical/Cross Icon - Styled for 'NADZ' brand look -->
+                                    <svg class="step-icon" viewBox="0 0 24 24" style="width: 40px; height: 40px;">
+                                        <path
+                                            d="M10.5 13H8v-3h2.5V7.5h3V10H16v3h-2.5v2.5h-3V13zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" />
+                                    </svg>
+                                </div>
+                                <p class="step-text" data-en="Care Nova at Your Doorstep"
+                                    data-ar="كير نوفا على عتبة بابك">Care Nova at<br>Your Doorstep</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div id="booking" class="booking-form">
