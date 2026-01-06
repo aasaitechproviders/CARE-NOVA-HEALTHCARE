@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CARE NOVA 24x7 - Premium Home Healthcare in Dubai</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <style>
         * {
@@ -113,7 +113,8 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 0px;
+            /* Reduced from 16px to bring text closer */
         }
 
         /* Care Nova Logo SVG */
@@ -140,22 +141,29 @@
         }
 
         .logo-text h1 {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 700;
             background: var(--gradient-gold-luxury);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            font-family: 'Google Sans', sans-serif;
+            margin: 0;
+            line-height: 1;
+            /* Update to Serif layout */
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
             filter: drop-shadow(0 2px 4px rgba(212, 167, 69, 0.4));
         }
 
         .logo-text .healthcare {
-            font-size: 13px;
-            color: var(--white);
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            /* White color */
+            font-size: 10px;
+            font-weight: 400;
+            letter-spacing: 1.8px;
+            /* Premium look */
+            text-transform: uppercase;
+            font-family: 'Cinzel', serif;
         }
 
         .header-right {
@@ -1715,8 +1723,8 @@
                 <!-- Care Nova Logo Image -->
                 <img src="assets/logo_final.png" alt="Care Nova Logo" class="logo-img-clean">
                 <div class="logo-text">
-                    <h1 data-en="Care Nova" data-ar="كير نوفا">Care Nova</h1>
-                    <span class="healthcare" data-en="Healthcare" data-ar="للرعاية الصحية">Healthcare</span>
+                    <h1 data-en="CARENOVA" data-ar="كير نوفا">CARENOVA</h1>
+                    <span class="healthcare" data-en="HEALTHCARE" data-ar="الرعاية الصحية">HEALTHCARE</span>
                 </div>
             </div>
             <div class="header-right">
