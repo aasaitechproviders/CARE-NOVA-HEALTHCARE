@@ -401,11 +401,22 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
         }
 
+        @media (min-width: 641px) {
+            .step-text-top {
+                order: -1;
+                margin-bottom: 8px;
+            }
+        }
+
         /* Mobile Adjustments */
         @media (max-width: 640px) {
             .pathway-steps {
                 flex-direction: column;
-                gap: 30px;
+                align-items: flex-start;
+                /* Align left */
+                gap: 40px;
+                padding-left: 10px;
+                /* Slight offset */
             }
 
             .pathway-steps::after {
@@ -416,12 +427,35 @@
                 display: block;
                 width: 2px;
                 height: 100%;
-                left: 50%;
+                left: 45px;
+                /* Center with 70px icon (35 + 10 padding) */
                 top: 0;
                 transform: translateX(-50%);
                 border-top: none;
                 border-left: 2px dashed rgba(212, 167, 69, 0.3);
                 border-radius: 0;
+            }
+
+            .pathway-step {
+                flex-direction: row;
+                text-align: left;
+                gap: 24px;
+                width: 100%;
+                justify-content: flex-start;
+                align-items: center;
+            }
+
+            .step-text {
+                text-align: left;
+                font-size: 16px;
+                /* Larger text for mobile readability */
+            }
+
+            .step-icon-box {
+                flex-shrink: 0;
+                /* Prevent icon shrinking */
+                z-index: 1;
+                /* Keep above the line */
             }
         }
 
@@ -1732,8 +1766,9 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h2 data-en="Premium Healthcare at Your Doorstep" data-ar="رعاية صحية متميزة عند عتبة بابك">
-                        Premium Healthcare at Your Doorstep
+                    <h2 data-en="Premium Healthcare at the comfort of your home"
+                        data-ar="رعاية صحية متميزة في راحة منزلك">
+                        Premium Healthcare at the comfort of your home
                     </h2>
                     <p data-en="Experience world-class medical care in the comfort of your home. Licensed DHA professionals, 24/7 availability, personalized compassionate care for your entire family."
                         data-ar="استمتع برعاية طبية عالمية المستوى في راحة منزلك. متخصصون مرخصون من هيئة الصحة بدبي، متاحون على مدار الساعة، ورعاية متعاطفة ومخصصة لجميع أفراد عائلتك.">
@@ -1767,8 +1802,6 @@
 
                             <!-- Step 2 -->
                             <div class="pathway-step">
-                                <p class="step-text" style="order: -1; margin-bottom: 8px;"
-                                    data-en="Share Your Location" data-ar="شارك موقعك">Share Your Location</p>
                                 <div class="step-icon-box">
                                     <!-- Location Icon -->
                                     <svg class="step-icon" viewBox="0 0 24 24">
@@ -1776,6 +1809,8 @@
                                             d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                                     </svg>
                                 </div>
+                                <p class="step-text" data-en="Share Your Location" data-ar="شارك موقعك">
+                                    Share Your Location</p>
                             </div>
 
                             <!-- Step 3 -->
