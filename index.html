@@ -73,7 +73,8 @@
             font-family: 'Roboto', sans-serif;
             color: var(--white);
             line-height: 1.6;
-            overflow-x: hidden;
+            /* overflow-x: hidden;  <-- Disabled to allow horizontal scrolling if content overflows */
+            overflow-x: auto;
             background: var(--gradient-black-primary);
         }
 
@@ -127,8 +128,8 @@
 
         /* Care Nova Logo Image (Clean Transparent) */
         .logo-img-clean {
-            width: 117px;
-            height: 80px;
+            width: 90px;
+            height: auto;
             filter: drop-shadow(0 2px 8px rgba(212, 167, 69, 0.3));
         }
 
@@ -1429,7 +1430,7 @@
             }
 
             .logo-img-clean {
-                width: 121px;
+                width: 121px !important;
             }
 
             .logo-text h1 {
@@ -2244,9 +2245,9 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-en="© 2026 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)"
-                    data-ar="© 2026 كير نوفا للرعاية الصحية. جميع الحقوق محفوظة.">
-                    © 2026 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)
+                <p data-en="© 2025 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)"
+                    data-ar="© 2025 كير نوفا للرعاية الصحية. جميع الحقوق محفوظة.">
+                    © 2025 Care Nova Healthcare. All rights reserved. | Licensed by Dubai Health Authority (DHA)
                 </p>
             </div>
         </div>
