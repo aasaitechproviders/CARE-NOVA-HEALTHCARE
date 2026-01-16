@@ -108,7 +108,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 30px 24px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -118,8 +117,6 @@
             align-items: center;
             gap: 0px;
             /* Reduced from 16px to bring text closer */
-            transform: scale(5);
-            padding-left: 35px;
         }
 
         /* Care Nova Logo SVG */
@@ -134,7 +131,7 @@
 
         /* Care Nova Logo Image (Clean Transparent) */
         .logo-img-clean {
-            width: 90px;
+            width: 350px;
             height: auto;
             filter: drop-shadow(0 2px 4px rgba(212, 167, 69, 0.2));
             /* Reduced glow */
@@ -1447,11 +1444,11 @@
                 width: 45px;
                 height: 45px;
             }
-
-            .logo-section {
-                padding-left: 10px;
-                transform: scale(1.5);
-            }
+	
+	    .logo-section {
+		padding-left: 10px;
+        transform: scale(1.5);
+		}
 
             .logo-img-clean {
                 width: 121px !important;
@@ -1693,10 +1690,6 @@
         [dir="rtl"] .nav-links a::after {
             left: auto;
             right: 0;
-        }
-
-        [dir="rtl"] .logo-img-clean {
-            margin-right: 50px;
         }
 
         @media (max-width: 968px) {
