@@ -108,7 +108,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 24px;
+            padding: 30px 24px;
             max-width: 1400px;
             margin: 0 auto;
         }
@@ -118,6 +118,8 @@
             align-items: center;
             gap: 0px;
             /* Reduced from 16px to bring text closer */
+            transform: scale(5);
+            padding-left: 35px;
         }
 
         /* Care Nova Logo SVG */
@@ -1446,6 +1448,11 @@
                 height: 45px;
             }
 
+            .logo-section {
+                padding-left: 10px;
+                transform: scale(1.5);
+            }
+
             .logo-img-clean {
                 width: 121px !important;
             }
@@ -1688,6 +1695,10 @@
             right: 0;
         }
 
+        [dir="rtl"] .logo-img-clean {
+            margin-right: 50px;
+        }
+
         @media (max-width: 968px) {
             [dir="rtl"] .floating-buttons {
                 left: 20px;
@@ -1730,11 +1741,12 @@
             <div class="logo-section">
                 <!-- Care Nova Logo SVG -->
                 <!-- Care Nova Logo Image -->
-                <img src="assets/logo_final.png" alt="Care Nova Logo" class="logo-img-clean">
-                <div class="logo-text">
+                <img src="assets/carenovalogo.png" alt="Care Nova Logo" class="logo-img-clean">
+                <!-- <div class="logo-text">
                     <h1 data-en="CARE NOVA" data-ar="كير نوفا">CARE NOVA</h1>
-                    <span class="healthcare" style="padding-left: 32px;" data-en="HEALTHCARE" data-ar="الرعاية الصحية">HEALTHCARE</span>
-                </div>
+                    <span class="healthcare" style="padding-left: 32px;" data-en="HEALTHCARE"
+                        data-ar="الرعاية الصحية">HEALTHCARE</span>
+                </div> -->
             </div>
             <div class="header-right">
                 <nav>
