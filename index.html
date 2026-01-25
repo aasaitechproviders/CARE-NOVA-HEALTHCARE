@@ -1344,6 +1344,7 @@
             }
         }
 
+
         /* Mobile Landscape & Tablet Portrait (641px - 968px) */
         @media (max-width: 968px) {
             .header-container {
@@ -1478,7 +1479,7 @@
 
             .logo-img-clean {
                 margin-bottom: 18px;
-                transform: scale(2) !important;
+                transform: scale(2);
                 width: 162px;
                 /* 🔥 BIG logo */
                 height: auto;
@@ -1486,9 +1487,7 @@
 
             }
 
-            [dir="rtl"] .logo-img-clean {
-                margin-right: 20px;
-            }
+
 
 
             [dir="ltr"] .logo-img-clean {
@@ -1766,6 +1765,35 @@
                 font-size: 16px;
                 white-space: nowrap;
             }
+        }
+
+        @media(max-width:640px) {
+            [dir="rtl"] .logo-img-clean {
+                margin-right: 20px;
+            }
+
+        }
+
+
+        @media (max-width: 376px) {
+            .logo-img-clean {
+                margin-left: -15px;
+                transform: scale(1.5);
+            }
+
+            [dir="ltr"] .logo-img-clean {
+                margin-left: -15px;
+            }
+
+            [dir="rtl"] .logo-img-clean {
+                margin-right: 0px;
+            }
+
+            .logo-section {
+                min-width: 0;
+            }
+
+
         }
     </style>
 </head>
