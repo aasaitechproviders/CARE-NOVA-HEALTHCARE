@@ -268,6 +268,10 @@
             box-shadow: 0 2px 6px rgba(212, 167, 69, 0.3);
             position: relative;
             overflow: hidden;
+            display: inline-flex;
+            /* Use flex for centering */
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-primary::before {
@@ -326,7 +330,12 @@
 
         .pathway-title {
             font-size: 26px;
-            background: var(--gradient-gold-luxury);
+            background: linear-gradient(135deg,
+                    #ffbe00,
+                    #D4AF37,
+                    #F5D27A,
+                    #D4AF37,
+                    #9E7C19);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -510,7 +519,12 @@
         .hero-text h2 {
             font-size: 56px;
             font-weight: 700;
-            background: var(--gradient-gold-luxury);
+            background: linear-gradient(135deg,
+                    #ffbe00,
+                    #D4AF37,
+                    #F5D27A,
+                    #D4AF37,
+                    #9E7C19);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -518,8 +532,8 @@
             font-family: 'Google Sans', sans-serif;
             line-height: 1.2;
             filter: drop-shadow(0 2px 4px rgba(212, 167, 69, 0.15));
-            /* Significantly reduced glow */
         }
+
 
         .hero-text p {
             font-size: 20px;
@@ -561,7 +575,12 @@
 
         .booking-form h3 {
             font-size: 28px;
-            background: var(--gradient-gold-luxury);
+            background: linear-gradient(135deg,
+                    #ffbe00,
+                    #D4AF37,
+                    #F5D27A,
+                    #D4AF37,
+                    #9E7C19);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -729,7 +748,12 @@
         .section-title {
             font-size: 48px;
             font-weight: 700;
-            background: var(--gradient-gold-luxury);
+            background: linear-gradient(135deg,
+                    #ffbe00,
+                    #D4AF37,
+                    #F5D27A,
+                    #D4AF37,
+                    #9E7C19);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -746,68 +770,155 @@
             line-height: 1.7;
         }
 
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
+        .service-list {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            /* Gap between service items */
+            margin-top: 60px;
             position: relative;
             z-index: 1;
         }
 
-        .service-card {
+        .service-row-item {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 0;
+            /* No gap, merged into one card */
             background: var(--card-bg);
-            padding: 36px;
             border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s;
-            border: 3px solid transparent;
-            background-clip: padding-box;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: -3px;
-            left: -3px;
-            right: -3px;
-            bottom: -3px;
-            background: var(--gradient-gold-luxury);
-            border-radius: 20px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(212, 167, 69, 0.3), 0 0 20px rgba(249, 242, 149, 0.15);
-        }
-
-        .service-card:hover::before {
+            overflow: hidden;
+            /* Clip content to radius */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 167, 69, 0.3);
             opacity: 1;
         }
 
-        .service-icon {
-            font-size: 64px;
-            margin-bottom: 20px;
-            display: inline-block;
-            filter: drop-shadow(0 4px 8px rgba(30, 90, 142, 0.3));
+        /* Alternate Layout: Image Right, Text Left for even items */
+        .service-row-item:nth-child(even) {
+            flex-direction: row-reverse;
         }
 
-        .service-card h3 {
-            font-size: 24px;
-            color: var(--blue-primary);
-            margin-bottom: 16px;
+        .service-visual {
+            flex: 1;
+            position: relative;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Removed individual card styles */
+        }
+
+        /* Placeholder Visual Styling */
+        .service-placeholder-visual {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            background: var(--card-bg);
+            /* Match parent bg */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: radial-gradient(circle at center, rgba(212, 167, 69, 0.1) 0%, transparent 70%);
+        }
+
+        .service-placeholder-visual .service-visual-icon {
+            font-size: 120px;
+            filter: drop-shadow(0 4px 15px rgba(212, 167, 69, 0.5));
+        }
+
+        .service-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .service-content {
+            flex: 1;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* Removed individual card styles */
+        }
+
+        .service-content .btn {
+            align-self: center;
+            /* Prevents button from stretching */
+            color: #000 !important;
+            /* Forces black text */
+            font-weight: 700;
+            min-width: 150px;
+            /* Good touch target */
+            text-align: center;
+        }
+
+        .service-icon-small {
+            font-size: 40px;
+            display: inline-block;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 2px 5px rgba(212, 167, 69, 0.3));
+        }
+
+        .service-content h3 {
+            font-size: 36px;
             font-family: 'Google Sans', sans-serif;
             font-weight: 700;
+            margin-bottom: 24px;
+            background: var(--gradient-gold-luxury);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .service-card p {
-            color: var(--blue-primary);
-            line-height: 1.7;
-            margin-bottom: 20px;
+        .service-content p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: rgba(0, 0, 0, 0.03);
+            /* Ghost text - wait, no */
+            color: #333333;
+            /* Dark text for visibility on white card */
+            margin-bottom: 32px;
+            max-width: 90%;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 968px) {
+            .service-row-item {
+                flex-direction: column !important;
+                /* Stack vertically on tablet/mobile */
+                gap: 40px;
+                text-align: center;
+            }
+
+            .service-content {
+                text-align: center;
+                padding: 0;
+                padding-bottom: 15px;
+            }
+
+            .service-content p {
+                margin: 0 auto 32px auto;
+                /* Center paragraph */
+            }
+
+            .service-visual {
+                width: 100%;
+                min-height: 300px;
+            }
+
+            .service-visual img {
+                position: relative;
+                /* fixes absolute positioning issue in flex column sometimes if height is unset */
+                height: auto;
+                min-height: 300px;
+            }
         }
 
         /* How It Works */
@@ -860,12 +971,17 @@
             font-size: 32px;
             font-weight: 700;
             margin: 0 auto 24px;
-            box-shadow: 0 6px 25px rgba(212, 167, 69, 0.6), 0 0 40px rgba(249, 242, 149, 0.4);
+            /* box-shadow: 0 6px 25px rgba(212, 167, 69, 0.6), 0 0 40px rgba(249, 242, 149, 0.4); */
         }
 
         .step h3 {
             font-size: 22px;
-            background: var(--gradient-gold-luxury);
+            background: linear-gradient(135deg,
+                    #ffbe00,
+                    #D4AF37,
+                    #F5D27A,
+                    #D4AF37,
+                    #9E7C19);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1225,8 +1341,25 @@
             z-index: 1;
         }
 
+        .service-card.doctoroncall {
+            position: relative;
+            background-image: url("assets/doctoroncall.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 16px;
+            padding: 28px;
+            color: #fff;
+            overflow: hidden;
+        }
+
         .footer-section h3 {
-            background: var(--gradient-gold-luxury);
+            background: linear-gradient(135deg,
+                    #ffbe00,
+                    #D4AF37,
+                    #F5D27A,
+                    #D4AF37,
+                    #9E7C19);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1684,7 +1817,7 @@
                 font-size: 26px;
             }
 
-            .book-now-btn{
+            .book-now-btn {
                 display: none;
             }
 
@@ -1830,10 +1963,11 @@
                     <button class="lang-btn" onclick="setLanguage('ar', this)">AR</button>
                 </div>
                 <div class="book-now-btn">
-<a href="#booking" class="btn btn-primary" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
-           
+                    <a href="#booking" class="btn btn-primary" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+
                 </div>
-                 </div>
+
+            </div>
         </div>
     </header>
 
@@ -1986,103 +2120,160 @@
                     delivered by certified professionals with compassion and expertise.
                 </p>
             </div>
-            <div class="service-grid">
-                <div class="service-card">
-                    <span class="service-icon">🏥</span>
-                    <h3 data-en="Doctor On Call" data-ar="طبيب عند الطلب">Doctor On Call</h3>
-                    <p data-en="When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home."
-                        data-ar="عندما يضرب المرض أو تحتاج إلى عناية طبية فورية، أطباؤنا ذوو الخبرة المرخصون من هيئة الصحة بدبي مستعدون لزيارتك.">
-                        When illness strikes or you need immediate medical attention, our experienced DHA-licensed
-                        physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we
-                        provide thorough examinations, accurate diagnoses, and effective treatment plans right in your
-                        home.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Doctor" data-ar="احجز طبيباً">Book
-                        Doctor</a>
+            <div class="service-list">
+                <!-- Doctor On Call -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <img src="assets/doctoroncall.png" alt="Doctor On Call" class="service-img">
+                    </div>
+                    <div class="service-content">
+
+                        <h3 data-en="Doctor On Call" data-ar="طبيب عند الطلب">Doctor On Call</h3>
+                        <p data-en="When illness strikes or you need immediate medical attention, our experienced DHA-licensed physicians are ready to visit you. Whether it's fever, flu, infections, or routine check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment plans right in your home."
+                            data-ar="عندما يضرب المرض أو تحتاج إلى عناية طبية فورية، أطباؤنا ذوو الخبرة المرخصون من هيئة الصحة بدبي مستعدون لزيارتك.">
+                            When illness strikes or you need immediate medical attention, our experienced DHA-licensed
+                            physicians are ready to visit you. Whether it's fever, flu, infections, or routine
+                            check-ups, we provide thorough examinations, accurate diagnoses, and effective treatment
+                            plans right in your home.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Book Doctor" data-ar="احجز طبيباً">Book
+                            Doctor</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">💉</span>
-                    <h3 data-en="Nursing Care at Home" data-ar="رعاية تمريضية">Nursing Care at Home</h3>
-                    <p data-en="Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions."
-                        data-ar="تعافى بشكل مريح في المنزل مع فريق التمريض الماهر لدينا.">
-                        Recover comfortably at home with our skilled nursing team. We provide post-operative care,
-                        medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring
-                        for chronic conditions.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Nurse" data-ar="احجز ممرضة">Book Nurse</a>
+
+                <!-- Nursing Care -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <div class="service-placeholder-visual">
+                            <span class="service-visual-icon">💉</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-en="Nursing Care at Home" data-ar="رعاية تمريضية">Nursing Care at Home</h3>
+                        <p data-en="Recover comfortably at home with our skilled nursing team. We provide post-operative care, medication administration, wound dressing, IV therapy, catheter care, and continuous monitoring for chronic conditions."
+                            data-ar="تعافى بشكل مريح في المنزل مع فريق التمريض الماهر لدينا.">
+                            Recover comfortably at home with our skilled nursing team. We provide post-operative care,
+                            medication administration, wound dressing, IV therapy, catheter care, and continuous
+                            monitoring for chronic conditions.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Book Nurse" data-ar="احجز ممرضة">Book
+                            Nurse</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🔬</span>
-                    <h3 data-en="Lab Tests at Home" data-ar="فحوصات مخبرية">Lab Tests at Home</h3>
-                    <p data-en="Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, receive your detailed digital reports within 24-48 hours."
-                        data-ar="تخطى طوابير العيادة واحصل على اختبارات تشخيصية شاملة.">
-                        Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From
-                        routine blood work to specialized tests, receive your detailed digital reports within 24-48
-                        hours.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Lab Test" data-ar="احجز فحصاً">Book Lab
-                        Test</a>
+
+                <!-- Lab Tests -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <div class="service-placeholder-visual">
+                            <span class="service-visual-icon">🔬</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-en="Lab Tests at Home" data-ar="فحوصات مخبرية">Lab Tests at Home</h3>
+                        <p data-en="Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From routine blood work to specialized tests, receive your detailed digital reports within 24-48 hours."
+                            data-ar="تخطى طوابير العيادة واحصل على اختبارات تشخيصية شاملة.">
+                            Skip the clinic queues and get comprehensive diagnostic testing at your convenience. From
+                            routine blood work to specialized tests, receive your detailed digital reports within 24-48
+                            hours.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Book Lab Test" data-ar="احجز فحصاً">Book Lab
+                            Test</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">🧘</span>
-                    <h3 data-en="Physiotherapy at Home" data-ar="علاج طبيعي">Physiotherapy at Home</h3>
-                    <p data-en="Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert therapists create customized rehabilitation programs for your recovery goals."
-                        data-ar="استعد الحركة والقوة والثقة مع جلسات العلاج الطبيعي.">
-                        Regain mobility, strength, and confidence with personalized physiotherapy sessions. Our expert
-                        therapists create customized rehabilitation programs for your recovery goals.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Session" data-ar="احجز جلسة">Book
-                        Session</a>
+
+                <!-- Wellness -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <div class="service-placeholder-visual">
+                            <span class="service-visual-icon">💪</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-en="Wellness & Preventive Care" data-ar="رعاية العافية">Wellness & Preventive Care</h3>
+                        <p data-en="Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, and preventive care plans."
+                            data-ar="كن متقدماً على المشاكل الصحية من خلال برامج الصحة الشاملة.">
+                            Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional
+                            counseling, vitamin therapy, health screenings, and preventive care plans.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn
+                            More</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">💪</span>
-                    <h3 data-en="Wellness & Preventive Care" data-ar="رعاية العافية">Wellness & Preventive Care</h3>
-                    <p data-en="Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional counseling, vitamin therapy, health screenings, and preventive care plans."
-                        data-ar="كن متقدماً على المشاكل الصحية من خلال برامج الصحة الشاملة.">
-                        Stay ahead of health issues with our comprehensive wellness programs. We offer nutritional
-                        counseling, vitamin therapy, health screenings, and preventive care plans.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
+
+                <!-- Elderly Care -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <div class="service-placeholder-visual">
+                            <span class="service-visual-icon">👴</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-en="Elderly Care Services" data-ar="رعاية المسنين">Elderly Care Services</h3>
+                        <p data-en="Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, and mobility assistance."
+                            data-ar="يستحق كبار السن لدينا أكثر رعاية متعاطفة ممكنة.">
+                            Our seniors deserve the most compassionate care possible. We provide specialized geriatric
+                            services including medication management, chronic disease monitoring, and mobility
+                            assistance.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn
+                            More</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">👴</span>
-                    <h3 data-en="Elderly Care Services" data-ar="رعاية المسنين">Elderly Care Services</h3>
-                    <p data-en="Our seniors deserve the most compassionate care possible. We provide specialized geriatric services including medication management, chronic disease monitoring, and mobility assistance."
-                        data-ar="يستحق كبار السن لدينا أكثر رعاية متعاطفة ممكنة.">
-                        Our seniors deserve the most compassionate care possible. We provide specialized geriatric
-                        services including medication management, chronic disease monitoring, and mobility assistance.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
+
+                <!-- IV Therapy -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <div class="service-placeholder-visual">
+                            <span class="service-visual-icon">💧</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-en="IV Therapy & NAD+" data-ar="محاليل وريدية">IV Therapy & NAD+</h3>
+                        <p data-en="Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy."
+                            data-ar="عزز طاقتك ومناعتك وصحتك العامة من خلال علاجات الحقن الوريدي.">
+                            Boost your energy, immunity, and overall wellness with our premium IV infusion therapies.
+                            From hydration and vitamin cocktails to anti-aging NAD+ therapy.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">💧</span>
-                    <h3 data-en="IV Therapy & NAD+" data-ar="محاليل وريدية">IV Therapy & NAD+</h3>
-                    <p data-en="Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From hydration and vitamin cocktails to anti-aging NAD+ therapy."
-                        data-ar="عزز طاقتك ومناعتك وصحتك العامة من خلال علاجات الحقن الوريدي.">
-                        Boost your energy, immunity, and overall wellness with our premium IV infusion therapies. From
-                        hydration and vitamin cocktails to anti-aging NAD+ therapy.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Now" data-ar="احجز الآن">Book Now</a>
+
+                <!-- Medical Tourism -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <div class="service-placeholder-visual">
+                            <span class="service-visual-icon">✈️</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-en="Medical Tourism Support" data-ar="السياحة العلاجية">Medical Tourism Support</h3>
+                        <p data-en="Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests with prompt, quality care throughout your stay."
+                            data-ar="تزور دبي وتحتاج إلى رعاية صحية؟ نقدم خدمات طبية شاملة للسياح.">
+                            Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists
+                            and hotel guests with prompt, quality care throughout your stay.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn
+                            More</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <span class="service-icon">✈️</span>
-                    <h3 data-en="Medical Tourism Support" data-ar="السياحة العلاجية">Medical Tourism Support</h3>
-                    <p data-en="Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and hotel guests with prompt, quality care throughout your stay."
-                        data-ar="تزور دبي وتحتاج إلى رعاية صحية؟ نقدم خدمات طبية شاملة للسياح.">
-                        Visiting Dubai and need healthcare? We provide comprehensive medical services for tourists and
-                        hotel guests with prompt, quality care throughout your stay.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Learn More" data-ar="اعرف المزيد">Learn More</a>
-                </div>
-                <div class="service-card">
-                    <span class="service-icon">🩺</span>
-                    <h3 data-en="Point-of-Care Testing" data-ar="فحص فوري">Point-of-Care Testing</h3>
-                    <p data-en="Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring, receive immediate, accurate results on the spot."
-                        data-ar="احصل على نتائج تشخيصية فورية مع اختبار نقطة الرعاية المتقدم.">
-                        Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and
-                        flu tests to glucose monitoring, receive immediate, accurate results on the spot.
-                    </p>
-                    <a href="#booking" class="btn btn-primary" data-en="Book Test" data-ar="احجز اختباراً">Book Test</a>
+
+                <!-- Point of Care -->
+                <div class="service-row-item">
+                    <div class="service-visual">
+                        <div class="service-placeholder-visual">
+                            <span class="service-visual-icon">🩺</span>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3 data-en="Point-of-Care Testing" data-ar="فحص فوري">Point-of-Care Testing</h3>
+                        <p data-en="Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19 and flu tests to glucose monitoring, receive immediate, accurate results on the spot."
+                            data-ar="احصل على نتائج تشخيصية فورية مع اختبار نقطة الرعاية المتقدم.">
+                            Get instant diagnostic results with our advanced point-of-care testing. From rapid COVID-19
+                            and flu tests to glucose monitoring, receive immediate, accurate results on the spot.
+                        </p>
+                        <a href="#booking" class="btn btn-primary" data-en="Book Test" data-ar="احجز اختباراً">Book
+                            Test</a>
+                    </div>
                 </div>
             </div>
         </div>
