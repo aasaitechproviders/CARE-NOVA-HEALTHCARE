@@ -806,11 +806,13 @@
         .service-visual {
             flex: 1;
             position: relative;
-            min-height: 400px;
+            /* min-height: 400px; Removed to prevent forcing height */
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Removed individual card styles */
+            background: var(--card-bg);
+            /* Ensure background matches card */
+            overflow: hidden;
         }
 
         /* Placeholder Visual Styling */
@@ -833,12 +835,9 @@
 
         .service-img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            position: absolute;
-            top: 0;
-            left: 0;
+            height: auto;
+            display: block;
+            /* Removed absolute positioning and object-fit cover to stop cropping */
         }
 
         .service-content {
@@ -918,9 +917,9 @@
 
             .service-visual img {
                 position: relative;
-                /* fixes absolute positioning issue in flex column sometimes if height is unset */
                 height: auto;
-                min-height: 300px;
+                width: 100%;
+                /* Removed min-height to prevent distortion */
             }
         }
 
@@ -1945,7 +1944,7 @@
             <div class="logo-section">
                 <!-- Care Nova Logo SVG -->
                 <!-- Care Nova Logo Image -->
-                <img src="assets/logo.png" alt="Care Nova Logo" class="logo-img-clean">
+                <img src="assets/carenovalogotransparent.png" alt="Care Nova Logo" class="logo-img-clean">
                 <!-- <div class="logo-text">
                     <h1 data-en="CARE NOVA" data-ar="كير نوفا">CARE NOVA</h1>
                     <span class="healthcare" style="padding-left: 32px;" data-en="HEALTHCARE"
@@ -2147,9 +2146,7 @@
                 <!-- Nursing Care -->
                 <div class="service-row-item">
                     <div class="service-visual">
-                        <div class="service-placeholder-visual">
-                            <span class="service-visual-icon">💉</span>
-                        </div>
+                        <img src="assets/nursingcare.jpeg" alt="Nursing Care at Home" class="service-img">
                     </div>
                     <div class="service-content">
                         <h3 data-en="Nursing Care at Home" data-ar="رعاية تمريضية">Nursing Care at Home</h3>
@@ -2167,9 +2164,7 @@
                 <!-- Lab Tests -->
                 <div class="service-row-item">
                     <div class="service-visual">
-                        <div class="service-placeholder-visual">
-                            <span class="service-visual-icon">🔬</span>
-                        </div>
+                        <img src="assets/labtest.png" alt="Lab Tests at Home" class="service-img">
                     </div>
                     <div class="service-content">
                         <h3 data-en="Lab Tests at Home" data-ar="فحوصات مخبرية">Lab Tests at Home</h3>
@@ -2187,9 +2182,7 @@
                 <!-- Wellness -->
                 <div class="service-row-item">
                     <div class="service-visual">
-                        <div class="service-placeholder-visual">
-                            <span class="service-visual-icon">💪</span>
-                        </div>
+                        <img src="assets/wellness.png" alt="Wellness & Preventive Care" class="service-img">
                     </div>
                     <div class="service-content">
                         <h3 data-en="Wellness & Preventive Care" data-ar="رعاية العافية">Wellness & Preventive Care</h3>
@@ -2206,9 +2199,7 @@
                 <!-- Elderly Care -->
                 <div class="service-row-item">
                     <div class="service-visual">
-                        <div class="service-placeholder-visual">
-                            <span class="service-visual-icon">👴</span>
-                        </div>
+                        <img src="assets/elderlyare.png" alt="Elderly Care Services" class="service-img">
                     </div>
                     <div class="service-content">
                         <h3 data-en="Elderly Care Services" data-ar="رعاية المسنين">Elderly Care Services</h3>
@@ -2226,9 +2217,7 @@
                 <!-- IV Therapy -->
                 <div class="service-row-item">
                     <div class="service-visual">
-                        <div class="service-placeholder-visual">
-                            <span class="service-visual-icon">💧</span>
-                        </div>
+                        <img src="assets/nad.jpeg" alt="IV Therapy & NAD+" class="service-img">
                     </div>
                     <div class="service-content">
                         <h3 data-en="IV Therapy & NAD+" data-ar="محاليل وريدية">IV Therapy & NAD+</h3>
@@ -2244,9 +2233,7 @@
                 <!-- Medical Tourism -->
                 <div class="service-row-item">
                     <div class="service-visual">
-                        <div class="service-placeholder-visual">
-                            <span class="service-visual-icon">✈️</span>
-                        </div>
+                        <img src="assets/medicaltourism.png" alt="Medical Tourism Support" class="service-img">
                     </div>
                     <div class="service-content">
                         <h3 data-en="Medical Tourism Support" data-ar="السياحة العلاجية">Medical Tourism Support</h3>
@@ -2263,9 +2250,7 @@
                 <!-- Point of Care -->
                 <div class="service-row-item">
                     <div class="service-visual">
-                        <div class="service-placeholder-visual">
-                            <span class="service-visual-icon">🩺</span>
-                        </div>
+                        <img src="assets/ponitofcaretesting.webp" alt="Point-of-Care Testing" class="service-img">
                     </div>
                     <div class="service-content">
                         <h3 data-en="Point-of-Care Testing" data-ar="فحص فوري">Point-of-Care Testing</h3>
